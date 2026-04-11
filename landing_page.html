@@ -83,7 +83,9 @@ tailwind.config = {
     box-shadow: 0 0 0 1px #e0ddd6;
   }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
 </style>
+<link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo" fetchpriority="high"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,6 +94,7 @@ tailwind.config = {
       "@type": "WebSite",
       "name": "PoolBidder",
       "url": "https://poolbid-landing.vercel.app/",
+      "inLanguage": "en-US",
       "description": "Independent pool design and bidding advocacy for U.S. homeowners.",
       "publisher": { "@type": "Organization", "name": "PoolBidder" }
     },
@@ -121,15 +124,10 @@ tailwind.config = {
         "priceCurrency": "USD",
         "description": "The Advocate Package — design, bid sheet, and bid management"
       }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
     {
       "@type": "Question",
       "name": "Why not go straight to a builder?",
@@ -170,6 +168,8 @@ tailwind.config = {
         "text": "You will see an on-page confirmation and receive an email from our form provider. We reply within one business day with next steps—or a polite decline if we are not a fit."
       }
     }
+      ]
+    }
   ]
 }
 </script>
@@ -204,8 +204,7 @@ tailwind.config = {
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#how-it-works">How it works</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#pricing">Pricing</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#faq">FAQ</a>
-<a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#book">Contact</a>
-<a class="block sm:hidden mt-4 py-3 text-center bg-ink text-paper text-sm font-medium" href="#book">Book consult</a>
+<a data-nav-link class="block py-3 text-ink font-medium" href="#book">Contact</a>
 </div>
 </nav>
 </header>
@@ -527,7 +526,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <!-- Optional: replace with Calendly — <iframe src="https://calendly.com/your-link" class="w-full min-h-[700px] border-0" title="Schedule"></iframe> -->
 </div>
 <div class="border-2 border-ink bg-paper p-6 sm:p-8 shadow-sm">
-<div id="form-success" class="hidden text-center py-8 px-4" role="status">
+<div id="form-success" class="hidden text-center py-8 px-4" role="status" tabindex="-1">
 <p class="font-headline font-semibold text-2xl text-ink mb-3">You are all set</p>
 <p class="text-muted text-sm leading-relaxed">Thanks for reaching out. Check your inbox for a confirmation—we will follow up shortly.</p>
 <a href="#top" class="inline-block mt-6 text-sm font-semibold text-brand underline underline-offset-4">Back to top</a>
@@ -536,6 +535,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <input type="hidden" name="_subject" value="PoolBidder — Consultation request"/>
 <input type="hidden" name="_template" value="table"/>
 <input type="hidden" name="_captcha" value="false"/>
+<input type="hidden" name="_autoresponse" value="Thanks for contacting PoolBidder. We received your request and will reply within one business day."/>
 <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
 <label class="block" for="pb-name">
 <span class="text-editorial-caps text-muted mb-2 block">Full name</span>
@@ -569,8 +569,8 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <span class="text-editorial-caps text-muted mb-2 block">What should we know?</span>
 <textarea id="pb-message" name="message" rows="4" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
 </label>
-<p class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
-<button id="pb-submit" type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed">Submit request</button>
+<p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
+<button id="pb-submit" type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed" aria-describedby="form-consent">Submit request</button>
 </form>
 </div>
 </div>
@@ -654,7 +654,12 @@ PoolBidder
 
   function showInlineSuccess() {
     if (form) form.classList.add('hidden');
-    if (success) success.classList.remove('hidden');
+    if (success) {
+      success.classList.remove('hidden');
+      window.requestAnimationFrame(function () {
+        try { success.focus({ preventScroll: true }); } catch (e) { success.focus(); }
+      });
+    }
     showThanksToast();
   }
 
