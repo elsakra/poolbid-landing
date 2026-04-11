@@ -33,9 +33,12 @@
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"/>
 <meta name="twitter:title" content="PoolBidder | Pool Design &amp; Bidding Advocate"/>
 <meta name="twitter:description" content="Independent advocacy—design, specs, and competitive bids for your pool project."/>
+<meta name="format-detection" content="telephone=no"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="dns-prefetch" href="https://formsubmit.co"/>
+<link rel="preconnect" href="https://formsubmit.co"/>
+<link rel="manifest" href="/manifest.json"/>
 <link rel="dns-prefetch" href="https://lh3.googleusercontent.com"/>
 <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111111'/%3E%3Cpath fill='none' stroke='%23faf9f7' stroke-width='2' d='M6 20c4-8 10-12 20-14'/%3E%3Cpath fill='%23006970' d='M6 22h20v4H6z' opacity='.9'/%3E%3C/svg%3E" type="image/svg+xml"/>
@@ -170,6 +173,7 @@ tailwind.config = {
         "@type": "ContactPoint",
         "contactType": "sales",
         "email": "hello@poolbidder.com",
+        "url": "https://poolbid-landing.vercel.app/#book",
         "areaServed": "US",
         "availableLanguage": ["English"]
       }
@@ -190,7 +194,8 @@ tailwind.config = {
         "availability": "https://schema.org/InStock",
         "url": "https://poolbid-landing.vercel.app/#pricing",
         "description": "The Advocate Package — design, bid sheet, and bid management",
-        "eligibleRegion": { "@type": "Country", "name": "US" }
+        "eligibleRegion": { "@type": "Country", "name": "US" },
+        "seller": { "@id": "https://poolbid-landing.vercel.app/#organization" }
       }
     },
     {
@@ -548,7 +553,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 <h2 class="font-headline font-semibold text-4xl sm:text-5xl text-ink">Common questions</h2>
 </div>
 <div class="border-t border-line">
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line bg-paper" open>
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 Why not go straight to a builder?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -603,7 +608,7 @@ After you submit, you will see on-page confirmation. If your browser shows a qui
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 <div>
 <p class="text-editorial-caps text-muted mb-4">Get started</p>
-<h2 class="font-headline font-semibold text-4xl sm:text-5xl text-ink mb-6 leading-tight">Book your free consultation</h2>
+<h2 id="book-heading" class="font-headline font-semibold text-4xl sm:text-5xl text-ink mb-6 leading-tight">Book your free consultation</h2>
 <p class="text-lg text-muted leading-relaxed mb-8 max-w-measure">
 Tell us about your project. We respond within <strong class="text-ink font-semibold">one business day</strong> with next steps—no cold calls, no spam.
 </p>
@@ -625,13 +630,13 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </p>
 <!-- Optional: replace with Calendly — <iframe src="https://calendly.com/your-link" class="w-full min-h-[700px] border-0" title="Schedule"></iframe> -->
 </div>
-<div class="border-2 border-ink bg-paper p-6 sm:p-8 shadow-sm">
+<div class="border-2 border-ink bg-paper p-6 sm:p-8 shadow-sm rounded-lg">
 <div id="form-success" class="hidden text-center py-8 px-4" role="status" tabindex="-1">
 <p class="font-headline font-semibold text-2xl text-ink mb-3">You are all set</p>
 <p class="text-muted text-sm leading-relaxed">Thanks for reaching out. Check your inbox for a confirmation—we will follow up shortly.</p>
 <a href="#top" class="inline-block mt-6 text-sm font-semibold text-brand underline underline-offset-4">Back to top</a>
 </div>
-<form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com" accept-charset="UTF-8" autocomplete="on" name="consult">
+<form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com" accept-charset="UTF-8" autocomplete="on" name="consult" aria-labelledby="book-heading">
 <input type="hidden" name="_subject" value="PoolBidder — Consultation request"/>
 <input type="hidden" name="_template" value="table"/>
 <input type="hidden" name="_autoresponse" value="Thanks for contacting PoolBidder. We received your request and will reply within one business day."/>
@@ -647,7 +652,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <div class="grid sm:grid-cols-2 gap-5">
 <label class="block" for="pb-phone">
 <span class="text-editorial-caps text-muted mb-2 block">Phone <span class="text-muted font-normal normal-case">(optional)</span></span>
-<input id="pb-phone" type="tel" name="phone" autocomplete="tel" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
 <label class="block" for="pb-location">
 <span class="text-editorial-caps text-muted mb-2 block">City / metro</span>
@@ -669,13 +674,13 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <textarea id="pb-message" name="message" rows="4" enterkeyhint="done" spellcheck="true" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
 </label>
 <p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
-<button id="pb-submit" type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed" aria-describedby="form-consent">Submit request</button>
+<p id="form-guarantee" class="text-xs text-muted leading-relaxed"><a class="text-ink font-medium underline underline-offset-2 hover:opacity-80" href="#pricing">Fit-first guarantee</a> — we only recommend paid design when we believe we can help.</p>
+<button id="pb-submit" type="submit" class="w-full min-h-[52px] sm:min-h-0 bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation" aria-describedby="form-consent form-guarantee">Submit request</button>
 </form>
 </div>
 </div>
 </div>
 </section>
-</main>
 
 <section id="legal" class="border-t border-line bg-paper scroll-mt-nav max-md:pb-8" aria-labelledby="terms-heading">
 <div class="max-w-content mx-auto px-4 sm:px-8 py-16 sm:py-20">
@@ -691,6 +696,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </div>
 </div>
 </section>
+</main>
 
 <footer class="bg-paper border-t border-line w-full pt-14 pb-[max(5.5rem,env(safe-area-inset-bottom)+4rem)] md:pb-14">
 <div class="max-w-content mx-auto px-4 sm:px-8">
@@ -704,19 +710,19 @@ PoolBidder
 </div>
 <div>
 <p class="text-editorial-caps text-muted mb-4">Product</p>
-<ul class="space-y-3 text-sm">
-<li><a class="text-ink hover:underline underline-offset-4" href="#how-it-works">How it works</a></li>
-<li><a class="text-ink hover:underline underline-offset-4" href="#pricing">Pricing</a></li>
-<li><a class="text-ink hover:underline underline-offset-4" href="#faq">FAQ</a></li>
-<li><a class="text-ink hover:underline underline-offset-4" href="#book">Book consult</a></li>
+<ul class="space-y-1 text-sm">
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#how-it-works">How it works</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#pricing">Pricing</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#faq">FAQ</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#book">Book consult</a></li>
 </ul>
 </div>
 <div>
 <p class="text-editorial-caps text-muted mb-4">Company</p>
-<ul class="space-y-3 text-sm">
-<li><a class="text-ink hover:underline underline-offset-4" href="#terms-heading">Terms of Service</a></li>
-<li><a class="text-ink hover:underline underline-offset-4" href="#privacy-heading">Privacy Policy</a></li>
-<li><a class="text-ink hover:underline underline-offset-4" href="mailto:hello@poolbidder.com">Contact</a></li>
+<ul class="space-y-1 text-sm">
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#terms-heading">Terms of Service</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#privacy-heading">Privacy Policy</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="mailto:hello@poolbidder.com">Contact</a></li>
 </ul>
 </div>
 <div>
