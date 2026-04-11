@@ -96,7 +96,15 @@ tailwind.config = {
       "@type": "Organization",
       "name": "PoolBidder",
       "url": "https://poolbid-landing.vercel.app/",
-      "description": "Professional pool design and bidding advocacy. Independent plans, unified bid sheets, and competitive quotes."
+      "email": "hello@poolbidder.com",
+      "description": "Professional pool design and bidding advocacy. Independent plans, unified bid sheets, and competitive quotes.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "hello@poolbidder.com",
+        "areaServed": "US",
+        "availableLanguage": ["English"]
+      }
     },
     {
       "@type": "Service",
@@ -430,6 +438,15 @@ How long does the process take?
 Roughly 5–7 days for an initial design pass and about two weeks to first bids—market dependent.
 </div>
 </details>
+<details class="faq-item group border-b border-line bg-paper">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-5 font-semibold text-ink text-left text-base">
+What happens after I submit the form?
+<span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
+</summary>
+<div class="pb-5 text-muted text-sm leading-relaxed">
+You will see an on-page confirmation and receive an email from our form provider. We reply within one business day with next steps—or a polite decline if we are not a fit.
+</div>
+</details>
 </div>
 </div>
 </section>
@@ -450,7 +467,11 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <li class="flex gap-3"><span class="text-brand font-bold" aria-hidden="true">✓</span> Current lead time · ~2 weeks for new onboarding</li>
 </ul>
 <p class="text-sm text-muted">Prefer email only? <a class="text-ink font-medium underline underline-offset-4 hover:opacity-80" href="mailto:hello@poolbidder.com?subject=PoolBidder%20inquiry">hello@poolbidder.com</a></p>
-<!-- Optional: paste Calendly embed URL in an iframe here when ready -->
+<p class="mt-4 flex items-center gap-2 text-xs text-muted">
+<span class="material-symbols-outlined text-base !text-lg text-brand" aria-hidden="true">lock</span>
+<span>Form is sent over HTTPS. We use your details only to respond to this request.</span>
+</p>
+<!-- Optional: replace with Calendly — <iframe src="https://calendly.com/your-link" class="w-full min-h-[700px] border-0" title="Schedule"></iframe> -->
 </div>
 <div class="border-2 border-ink bg-paper p-6 sm:p-8 shadow-sm">
 <div id="form-success" class="hidden text-center py-8 px-4" role="status">
@@ -463,27 +484,27 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <input type="hidden" name="_template" value="table"/>
 <input type="hidden" name="_captcha" value="false"/>
 <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
-<label class="block">
+<label class="block" for="pb-name">
 <span class="text-editorial-caps text-muted mb-2 block">Full name</span>
-<input type="text" name="name" required autocomplete="name" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-name" type="text" name="name" required autocomplete="name" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
-<label class="block">
+<label class="block" for="pb-email">
 <span class="text-editorial-caps text-muted mb-2 block">Email</span>
-<input type="email" name="email" required autocomplete="email" inputmode="email" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-email" type="email" name="email" required autocomplete="email" inputmode="email" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
 <div class="grid sm:grid-cols-2 gap-5">
-<label class="block">
+<label class="block" for="pb-phone">
 <span class="text-editorial-caps text-muted mb-2 block">Phone <span class="text-muted font-normal normal-case">(optional)</span></span>
-<input type="tel" name="phone" autocomplete="tel" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-phone" type="tel" name="phone" autocomplete="tel" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
-<label class="block">
+<label class="block" for="pb-location">
 <span class="text-editorial-caps text-muted mb-2 block">City / metro</span>
-<input type="text" name="location" required autocomplete="address-level2" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-location" type="text" name="location" required autocomplete="address-level2" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
 </div>
-<label class="block">
+<label class="block" for="pb-stage">
 <span class="text-editorial-caps text-muted mb-2 block">Project stage</span>
-<select name="stage" required class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink">
+<select id="pb-stage" name="stage" required class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink">
 <option value="" selected>Select one</option>
 <option value="Exploring">Exploring / budgeting</option>
 <option value="Ready for design">Ready for design</option>
@@ -491,12 +512,12 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <option value="Other">Other</option>
 </select>
 </label>
-<label class="block">
+<label class="block" for="pb-message">
 <span class="text-editorial-caps text-muted mb-2 block">What should we know?</span>
-<textarea name="message" rows="4" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
+<textarea id="pb-message" name="message" rows="4" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
 </label>
 <p class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
-<button type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity">Submit request</button>
+<button id="pb-submit" type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed">Submit request</button>
 </form>
 </div>
 </div>
@@ -593,6 +614,12 @@ PoolBidder
   if (form) {
     form.addEventListener('submit', function () {
       try { sessionStorage.setItem('pb_form_started', '1'); } catch (e) {}
+      var btn = document.getElementById('pb-submit');
+      if (btn) {
+        btn.disabled = true;
+        btn.setAttribute('aria-busy', 'true');
+        btn.textContent = 'Sending…';
+      }
     });
   }
 })();
@@ -630,7 +657,8 @@ PoolBidder
       link.classList.toggle('text-ink', match);
       link.classList.toggle('font-semibold', match);
       link.classList.toggle('text-muted', !match);
-      link.setAttribute('aria-current', match ? 'page' : 'false');
+      if (match) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
     });
   }
   function pickSectionFromScroll() {
