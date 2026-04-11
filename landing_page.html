@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth" lang="en" data-default-title="PoolBidder | Professional Pool Design &amp; Bidding Advocate">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
@@ -30,6 +30,7 @@
 <meta name="twitter:description" content="Independent advocacy—design, specs, and competitive bids for your pool project."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="dns-prefetch" href="https://formsubmit.co"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111111'/%3E%3Cpath fill='none' stroke='%23faf9f7' stroke-width='2' d='M6 20c4-8 10-12 20-14'/%3E%3Cpath fill='%23006970' d='M6 22h20v4H6z' opacity='.9'/%3E%3C/svg%3E" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%23111111'/%3E%3Ctext x='90' y='118' font-family='Georgia,serif' font-size='72' fill='%23faf9f7' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -130,7 +131,12 @@ tailwind.config = {
       "inLanguage": "en-US",
       "description": "Independent pool design and bidding advocacy for U.S. homeowners.",
       "publisher": { "@id": "https://poolbid-landing.vercel.app/#organization" },
-      "mainEntity": { "@id": "https://poolbid-landing.vercel.app/#organization" }
+      "mainEntity": { "@id": "https://poolbid-landing.vercel.app/#organization" },
+      "potentialAction": {
+        "@type": "CommunicateAction",
+        "name": "Request a free consultation",
+        "target": "https://poolbid-landing.vercel.app/#book"
+      }
     },
     {
       "@type": "Organization",
@@ -165,7 +171,8 @@ tailwind.config = {
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "url": "https://poolbid-landing.vercel.app/#pricing",
-        "description": "The Advocate Package — design, bid sheet, and bid management"
+        "description": "The Advocate Package — design, bid sheet, and bid management",
+        "eligibleRegion": { "@type": "Country", "name": "US" }
       }
     },
     {
@@ -212,6 +219,18 @@ tailwind.config = {
       }
     }
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://poolbid-landing.vercel.app/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://poolbid-landing.vercel.app/"
+        }
+      ]
     }
   ]
 }
@@ -243,7 +262,7 @@ tailwind.config = {
 </button>
 </div>
 </div>
-<div id="nav-mobile" class="hidden md:hidden border-t border-line bg-paper px-4 py-4 space-y-0">
+<div id="nav-mobile" class="hidden md:hidden border-t border-line bg-paper px-4 py-4 space-y-0 max-h-[min(70vh,calc(100dvh-5.5rem-env(safe-area-inset-top,0px)))] overflow-y-auto overscroll-contain">
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#how-it-works">How it works</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#pricing">Pricing</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#faq">FAQ</a>
@@ -549,7 +568,7 @@ After you submit, you will see on-page confirmation. If your browser shows a qui
 </section>
 
 <!-- Conversion: lead form + end-to-end workflow (FormSubmit) -->
-<section id="book" class="py-20 sm:py-28 bg-mist border-t border-line scroll-mt-nav">
+<section id="book" class="py-20 sm:py-28 bg-mist border-t border-line scroll-mt-nav" aria-label="Request a consultation">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 <div>
@@ -739,6 +758,11 @@ PoolBidder
       btn.removeAttribute('aria-busy');
       btn.textContent = 'Submit request';
     }
+    try {
+      var q = new URLSearchParams(window.location.search).get('thanks');
+      var def = document.documentElement.getAttribute('data-default-title');
+      if (def && q !== '1') document.title = def;
+    } catch (e) {}
   });
 })();
 
