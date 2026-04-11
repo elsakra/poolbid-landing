@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#faf9f7"/>
+<meta name="color-scheme" content="light"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="PoolBidder"/>
 <meta name="robots" content="index, follow"/>
@@ -62,7 +63,8 @@ tailwind.config = {
 };
 </script>
 <style>
-  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  a, button, summary, [role="button"] { -webkit-tap-highlight-color: transparent; }
   h1, h2, h3, .font-headline { font-family: 'Newsreader', Georgia, serif; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-size: 1.25rem; }
   .text-editorial-caps {
@@ -85,7 +87,7 @@ tailwind.config = {
   }
   :focus-visible { outline: 2px solid #111; outline-offset: 3px; }
   .skip-link:focus {
-    position: fixed; left: 1rem; top: 1rem; z-index: 100;
+    position: fixed; left: 1rem; top: max(1rem, env(safe-area-inset-top, 0px)); z-index: 100;
     clip: auto; width: auto; height: auto; padding: 0.5rem 1rem; margin: 0;
     overflow: visible; white-space: normal;
     background: #faf9f7; border-radius: 0.25rem;
@@ -114,6 +116,7 @@ tailwind.config = {
       "name": "PoolBidder | Professional Pool Design & Bidding Advocate",
       "description": "Independent pool design and bidding advocacy. Plans you own, unified bid specs, competitive bids.",
       "inLanguage": "en-US",
+      "dateModified": "2026-04-11",
       "isPartOf": { "@id": "https://poolbid-landing.vercel.app/#website" },
       "about": { "@id": "https://poolbid-landing.vercel.app/#organization" },
       "primaryImageOfPage": {
@@ -160,7 +163,7 @@ tailwind.config = {
       }
     },
     {
-      "@type": "Service",
+      "@type": "ProfessionalService",
       "name": "Pool design and bidding advocacy",
       "serviceType": "Home improvement advisory",
       "provider": { "@id": "https://poolbid-landing.vercel.app/#organization" },
@@ -273,7 +276,7 @@ tailwind.config = {
 
 <!-- Sticky mobile CTA (conversion pattern) -->
 <div id="sticky-cta-bar" class="fixed bottom-0 left-0 right-0 z-40 md:hidden border-t border-line bg-paper/95 backdrop-blur-sm px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition-opacity duration-200 ease-out" role="region" aria-label="Quick action">
-<a href="#book" class="flex w-full min-h-[3rem] justify-center items-center bg-ink text-paper py-3.5 text-sm font-semibold rounded-t-lg">Book free consultation</a>
+<a href="#book" class="flex w-full min-h-[3rem] justify-center items-center bg-ink text-paper py-3.5 text-sm font-semibold rounded-t-lg active:opacity-90">Book free consultation</a>
 </div>
 
 <main id="main-content" class="pb-28 md:pb-0">
@@ -582,6 +585,12 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <li class="flex gap-3"><span class="text-brand font-bold" aria-hidden="true">✓</span> We never sell your data</li>
 <li class="flex gap-3"><span class="text-brand font-bold" aria-hidden="true">✓</span> Current lead time · ~2 weeks for new onboarding</li>
 </ul>
+<p class="text-editorial-caps text-muted mb-3">What happens next</p>
+<ol class="list-decimal list-outside pl-5 space-y-2.5 text-sm text-muted mb-8 max-w-measure marker:text-ink">
+<li class="pl-1">You submit the form—about two minutes.</li>
+<li class="pl-1">We reply within <strong class="text-ink font-semibold">one business day</strong> by email.</li>
+<li class="pl-1">If we are a fit, we schedule a short discovery call—no pressure to buy design on the spot.</li>
+</ol>
 <p class="text-sm text-muted">Prefer email only? <a class="text-ink font-medium underline underline-offset-4 hover:opacity-80" href="mailto:hello@poolbidder.com?subject=PoolBidder%20inquiry">hello@poolbidder.com</a></p>
 <p class="mt-4 flex items-center gap-2 text-xs text-muted">
 <span class="material-symbols-outlined text-base !text-lg text-brand" aria-hidden="true">lock</span>
@@ -595,7 +604,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <p class="text-muted text-sm leading-relaxed">Thanks for reaching out. Check your inbox for a confirmation—we will follow up shortly.</p>
 <a href="#top" class="inline-block mt-6 text-sm font-semibold text-brand underline underline-offset-4">Back to top</a>
 </div>
-<form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com" autocomplete="on" name="consult">
+<form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com" accept-charset="UTF-8" autocomplete="on" name="consult">
 <input type="hidden" name="_subject" value="PoolBidder — Consultation request"/>
 <input type="hidden" name="_template" value="table"/>
 <input type="hidden" name="_autoresponse" value="Thanks for contacting PoolBidder. We received your request and will reply within one business day."/>
