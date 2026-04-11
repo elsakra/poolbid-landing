@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PoolBidder | Professional Pool Design &amp; Bidding Advocate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#eff4ff",
+                      "on-surface": "#0b1c30",
+                      "primary-container": "#003b5c",
+                      "inverse-surface": "#213145",
+                      "on-tertiary-fixed": "#001d32",
+                      "tertiary-container": "#003b5e",
+                      "secondary-container": "#7af1fc",
+                      "outline-variant": "#c2c7ce",
+                      "tertiary": "#00253d",
+                      "primary-fixed-dim": "#a0cbf3",
+                      "secondary": "#006970",
+                      "outline": "#72787e",
+                      "surface-variant": "#d3e4fe",
+                      "on-primary-fixed": "#001d31",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "primary": "#00253b",
+                      "on-tertiary-container": "#6ca6db",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-background": "#0b1c30",
+                      "on-primary": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "secondary-fixed-dim": "#5dd8e2",
+                      "on-error": "#ffffff",
+                      "background": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "tertiary-fixed": "#cee5ff",
+                      "inverse-primary": "#a0cbf3",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#42474e",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-container": "#7aa5cc",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#004f54",
+                      "tertiary-fixed-dim": "#96ccff",
+                      "on-secondary-container": "#006e75",
+                      "surface-tint": "#366285",
+                      "surface-bright": "#f8f9ff",
+                      "secondary-fixed": "#7df4ff",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#1a4a6c",
+                      "primary-fixed": "#cce5ff",
+                      "on-tertiary-fixed-variant": "#004a75",
+                      "on-secondary-fixed": "#002022"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Noto Serif"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(24px); background: rgba(255, 255, 255, 0.85); }
+        .hero-gradient { background: linear-gradient(to right, rgba(0, 37, 59, 0.9) 0%, rgba(0, 37, 59, 0.4) 100%); }
+        .text-editorial-caps { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_8px_30px_rgba(11,28,48,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-2xl font-serif font-bold text-[#00253b]">PoolBidder</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#00253b] font-bold border-b-2 border-[#006970] tracking-[0.05em]" href="#">How it Works</a>
+<a class="text-[#00253b]/70 font-medium hover:text-[#006970] transition-colors duration-300 tracking-[0.05em]" href="#">Pricing</a>
+<a class="text-[#00253b]/70 font-medium hover:text-[#006970] transition-colors duration-300 tracking-[0.05em]" href="#">FAQ</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium scale-95 active:scale-90 transition-transform hover:opacity-90">
+                Get My Free Pool Design
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury Pool" class="w-full h-full object-cover" data-alt="luxury infinity edge pool overlooking a sunset ocean horizon with minimalist white stone architecture and soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-2xl">
+<span class="inline-block bg-secondary/20 text-secondary-container px-4 py-1 rounded-full text-editorial-caps mb-6 backdrop-blur-md">
+                    New Homeowner?
+                </span>
+<h1 class="text-white text-6xl md:text-7xl font-bold leading-tight mb-8 tracking-tight">
+                    Professional Pool Design &amp; Bidding Advocate
+                </h1>
+<p class="text-white/80 text-xl leading-relaxed mb-10 font-body">
+                    We flip the script on the pool industry. Stop being sold, start being represented. We handle the design, the specs, and the bidding so you get the pool you want for the price you deserve.
+                </p>
+<div class="flex gap-4">
+<button class="bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:bg-[#005a61] transition-all">
+                        Book My Free Consultation
+                    </button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                        View Sample Designs
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Proof Bar -->
+<section class="bg-primary py-10 relative z-20 -mt-12 mx-8 rounded-xl shadow-2xl">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-secondary text-3xl font-bold mb-1">$8,400</div>
+<div class="text-white/60 text-editorial-caps">Average Savings</div>
+</div>
+<div>
+<div class="text-secondary text-3xl font-bold mb-1">5+ Bids</div>
+<div class="text-white/60 text-editorial-caps">Per Project</div>
+</div>
+<div>
+<div class="text-secondary text-3xl font-bold mb-1">14 Days</div>
+<div class="text-white/60 text-editorial-caps">Design to Bid</div>
+</div>
+<div>
+<div class="text-secondary text-3xl font-bold mb-1">0 Sales</div>
+<div class="text-white/60 text-editorial-caps">Pressure Pitches</div>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-primary text-5xl font-bold mb-4">Buying a pool is broken.</h2>
+<p class="text-on-surface-variant text-lg">The traditional model favors the builder, not the homeowner.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="block">block</span>
+<h3 class="text-primary font-bold text-xl mb-4">Builder Locking</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Builders keep your design files, making it impossible to shop around without starting over.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="payments">payments</span>
+<h3 class="text-primary font-bold text-xl mb-4">Hidden Margins</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Sales commissions and marketing overhead are baked into your quote—costing you thousands.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="warning">warning</span>
+<h3 class="text-primary font-bold text-xl mb-4">Uneven Specs</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Comparing quotes is impossible when builders use different equipment, piping, and steel standards.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="timer">timer</span>
+<h3 class="text-primary font-bold text-xl mb-4">Wasted Time</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Spending weeks meeting with 10 different salesmen just to get basic pricing information.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-primary text-5xl font-bold mb-16 text-center">Your Journey to a Perfect Pool</h2>
+<div class="space-y-4">
+<!-- Step 1 -->
+<div class="flex items-center gap-8 bg-surface-container-lowest p-8 rounded-xl">
+<div class="text-4xl font-serif text-secondary/30 font-bold">01</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-xl font-bold text-primary">Discovery Call</h3>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest">Free</span>
+</div>
+<p class="text-on-surface-variant">We discuss your vision, yard constraints, and budget to see if we're a fit.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-8 bg-surface-container-lowest p-8 rounded-xl ml-8">
+<div class="text-4xl font-serif text-secondary/30 font-bold">02</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-xl font-bold text-primary">Architectural Design</h3>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest">Your design fee at work</span>
+</div>
+<p class="text-on-surface-variant">Our designers create a stunning 3D model and a set of detailed construction plans you own.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-8 bg-surface-container-lowest p-8 rounded-xl ml-16">
+<div class="text-4xl font-serif text-secondary/30 font-bold">03</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-xl font-bold text-primary">Unified Bid Sheet</h3>
+</div>
+<p class="text-on-surface-variant">We create a technical specification document so every builder quotes on the exact same high standards.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center gap-8 bg-surface-container-lowest p-8 rounded-xl ml-24">
+<div class="text-4xl font-serif text-secondary/30 font-bold">04</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-xl font-bold text-primary">The Bidding War</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest">We handle the sales calls</span>
+</div>
+<p class="text-on-surface-variant">We send your plans to top-rated local builders and manage all technical questions and negotiations.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex items-center gap-8 bg-primary p-8 rounded-xl ml-32">
+<div class="text-4xl font-serif text-white/20 font-bold">05</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-xl font-bold text-white">Award &amp; Build</h3>
+</div>
+<p class="text-white/70">You choose the winning builder based on price, reputation, and timeline. You've already saved thousands.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-12">
+<div class="p-10 rounded-2xl bg-surface-container-low">
+<h3 class="text-2xl font-serif font-bold mb-8 text-on-surface-variant">The "Old Way"</h3>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error" data-icon="close">close</span>
+<span class="text-on-surface-variant">Builder owns your design files.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error" data-icon="close">close</span>
+<span class="text-on-surface-variant">Endless sales pitches and "today only" pressure.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error" data-icon="close">close</span>
+<span class="text-on-surface-variant">Builders use cheapest specs to win on price.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error" data-icon="close">close</span>
+<span class="text-on-surface-variant">Markup for sales commissions (average 8%).</span>
+</li>
+</ul>
+</div>
+<div class="p-10 rounded-2xl bg-primary text-white shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-secondary text-6xl opacity-20" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="text-2xl font-serif font-bold mb-8">The PoolBidder Way</h3>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>You own your design. Take it anywhere.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>One point of contact. We filter the noise.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>Universal specs ensure quality materials.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>Builders bid lower knowing they're competing.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Stack / Pricing -->
+<section class="py-24 bg-surface-container-highest">
+<div class="max-w-4xl mx-auto px-8">
+<div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+<div class="bg-primary p-12 text-center text-white">
+<h2 class="text-4xl font-serif font-bold mb-4">The Advocate Package</h2>
+<div class="text-secondary text-5xl font-bold mb-2">$499</div>
+<p class="text-white/60 text-editorial-caps">One-time Investment</p>
+</div>
+<div class="p-12 space-y-8">
+<div class="flex justify-between items-center pb-6 border-b border-outline-variant/10">
+<span class="text-primary font-medium">Custom 3D Architectural Design</span>
+<span class="text-secondary-fixed-dim font-bold">$1,200 Value</span>
+</div>
+<div class="flex justify-between items-center pb-6 border-b border-outline-variant/10">
+<span class="text-primary font-medium">Technical Construction Bid Sheet</span>
+<span class="text-secondary-fixed-dim font-bold">$450 Value</span>
+</div>
+<div class="flex justify-between items-center pb-6 border-b border-outline-variant/10">
+<span class="text-primary font-medium">Professional Bid Management (5+ Builders)</span>
+<span class="text-secondary-fixed-dim font-bold">$2,500 Value</span>
+</div>
+<div class="flex justify-between items-center pb-6 border-b border-outline-variant/10">
+<span class="text-primary font-medium">Contract Review &amp; Price Audit</span>
+<span class="text-secondary-fixed-dim font-bold">$600 Value</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl text-center">
+<div class="text-primary font-bold text-2xl mb-1">$4,750 Total Value</div>
+<div class="text-secondary text-lg font-bold">Avg. Savings: $8,400+</div>
+</div>
+<button class="w-full bg-primary text-white py-6 rounded-xl font-bold text-xl hover:opacity-90 transition-opacity">
+                        Start My Project Now
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-primary text-5xl font-bold mb-16 text-center">Real Savings, Real Stories</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border border-outline-variant/10 relative">
+<span class="material-symbols-outlined text-secondary-container text-6xl absolute top-8 right-8 opacity-20" data-icon="format_quote">format_quote</span>
+<p class="text-on-surface text-lg italic leading-relaxed mb-8">"We saved exactly $11,200 on our project. The best part was not having to deal with the sales guys. PoolBidder did it all."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">JS</div>
+<div>
+<div class="font-bold text-primary">James S.</div>
+<div class="text-sm text-on-surface-variant">Phoenix, AZ</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border border-outline-variant/10 relative">
+<span class="material-symbols-outlined text-secondary-container text-6xl absolute top-8 right-8 opacity-20" data-icon="format_quote">format_quote</span>
+<p class="text-on-surface text-lg italic leading-relaxed mb-8">"I had three builders give me quotes and they were so different I couldn't compare. PoolBidder's bid sheet fixed everything."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">MD</div>
+<div>
+<div class="font-bold text-primary">Michelle D.</div>
+<div class="text-sm text-on-surface-variant">Austin, TX</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border border-outline-variant/10 relative">
+<span class="material-symbols-outlined text-secondary-container text-6xl absolute top-8 right-8 opacity-20" data-icon="format_quote">format_quote</span>
+<p class="text-on-surface text-lg italic leading-relaxed mb-8">"Owning our design was the game changer. We switched builders mid-way through bidding and didn't lose a single day."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">RK</div>
+<div>
+<div class="font-bold text-primary">Robert K.</div>
+<div class="text-sm text-on-surface-variant">Orlando, FL</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border border-outline-variant/10 relative">
+<span class="material-symbols-outlined text-secondary-container text-6xl absolute top-8 right-8 opacity-20" data-icon="format_quote">format_quote</span>
+<p class="text-on-surface text-lg italic leading-relaxed mb-8">"The $499 was the best money we spent on the whole house. It paid for itself 10x over in the first week."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">LW</div>
+<div>
+<div class="font-bold text-primary">Linda W.</div>
+<div class="text-sm text-on-surface-variant">Houston, TX</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-3xl mx-auto px-8">
+<h2 class="text-primary text-5xl font-bold mb-16 text-center">Common Questions</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h3 class="font-bold text-primary mb-2">Why wouldn't I just go to a builder directly?</h3>
+<p class="text-on-surface-variant text-sm">You can, but builders include high sales commissions in their quotes. By bringing your own design and specs, you signal you're an informed buyer, forcing them to bid their most competitive 'real' price.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h3 class="font-bold text-primary mb-2">Do you build the pool?</h3>
+<p class="text-on-surface-variant text-sm">No. We are independent advocates. We never take kickbacks from builders. Our only loyalty is to you and your budget.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h3 class="font-bold text-primary mb-2">What if I already have a sketch?</h3>
+<p class="text-on-surface-variant text-sm">That's great! We can use your sketch as a starting point to create the technical architectural plans required for accurate bidding.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h3 class="font-bold text-primary mb-2">How long does the process take?</h3>
+<p class="text-on-surface-variant text-sm">Typically, we have your 3D design finished in 5-7 days and your first round of bids back within 14 days.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 bg-primary relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Modern Pool" class="w-full h-full object-cover opacity-20" data-alt="cinematic shot of a perfectly still rectangular pool at night with soft blue underwater lighting and modern deck tiles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk92eF780sFdOGtTdPZBeOH4AjgZ7WdNR6Guuqb3F6hRBKgGrtYBhjA0mzhYINU4AtUzDuoPRU-lC90C8sDiYMsgG3flErewl3bezwld5KmLPQMVpUxDma0y28JdLUenjP_PcV7Lyncht3aljHvRiqOPO4Li2tNgyPK4VIeez526CbuwDXS7RuqF7MVJJDr7gzjM0HwQPZIQ9crL38qFr61Q2F_UvCF2eE7CqAeILhPhk48eWltaS9mcXMonWRN70uMsiWALZpuaQ"/>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-8 text-center text-white">
+<span class="inline-block bg-error text-white px-4 py-1 rounded-full text-editorial-caps mb-8 animate-pulse">
+                Current Lead Time: 2 Weeks
+            </span>
+<h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Ready to build your dream pool without the nightmare?</h2>
+<p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
+                Join 400+ homeowners who used PoolBidder to take control of their project and save an average of $8,400.
+            </p>
+<button class="bg-secondary text-white px-12 py-6 rounded-xl font-bold text-2xl shadow-2xl hover:bg-[#005a61] transition-all transform hover:-translate-y-1">
+                Book My Free Consultation
+            </button>
+<p class="mt-6 text-white/40 text-sm italic">Limited spots available for current month project starts.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#f8f9ff] dark:bg-slate-900 w-full py-12 border-t border-slate-200/15">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6">
+<div class="font-serif text-xl font-bold text-[#00253b] dark:text-slate-300">PoolBidder</div>
+<div class="flex gap-8 text-slate-500 font-body text-sm">
+<a class="hover:text-[#00253b] transition-opacity" href="#">Terms of Service</a>
+<a class="hover:text-[#00253b] transition-opacity" href="#">Privacy Policy</a>
+<a class="hover:text-[#00253b] transition-opacity" href="#">Contact Us</a>
+</div>
+<div class="text-slate-600 dark:text-slate-400 text-sm">
+                © 2024 PoolBidder. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
