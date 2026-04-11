@@ -16,6 +16,7 @@
 <meta name="author" content="PoolBidder"/>
 <meta name="geo.region" content="US"/>
 <link rel="canonical" href="https://poolbid-landing.vercel.app/"/>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://poolbid-landing.vercel.app/sitemap.xml"/>
 <link rel="alternate" hreflang="en" href="https://poolbid-landing.vercel.app/"/>
 <link rel="alternate" hreflang="x-default" href="https://poolbid-landing.vercel.app/"/>
 <meta property="og:type" content="website"/>
@@ -278,7 +279,7 @@ tailwind.config = {
 <body class="bg-paper text-ink antialiased">
 <a href="#main-content" class="sr-only skip-link">Skip to content</a>
 
-<div id="toast-thanks" class="hidden fixed left-4 right-4 z-[60] max-w-lg mx-auto px-4 py-3 bg-ink text-paper text-sm text-center shadow-lg border border-line top-[calc(4.75rem+env(safe-area-inset-top,0px))]" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="toast-thanks" class="hidden fixed z-[60] max-w-lg w-[min(100%-2rem,32rem)] left-1/2 -translate-x-1/2 px-4 py-3 bg-ink text-paper text-sm text-center shadow-lg border border-line top-[calc(4.75rem+env(safe-area-inset-top,0px))] [padding-left:max(1rem,env(safe-area-inset-left))] [padding-right:max(1rem,env(safe-area-inset-right))]" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <header>
 <nav class="fixed top-0 w-full z-50 border-b border-line pt-[env(safe-area-inset-top,0px)] bg-paper/90 backdrop-blur-md supports-[backdrop-filter]:bg-paper/85" aria-label="Primary">
@@ -300,11 +301,11 @@ tailwind.config = {
 </button>
 </div>
 </div>
-<div id="nav-mobile" class="hidden md:hidden border-t border-line bg-paper px-4 py-4 space-y-0 max-h-[min(70vh,calc(100dvh-5.5rem-env(safe-area-inset-top,0px)))] overflow-y-auto overscroll-contain">
-<a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#how-it-works">How it works</a>
-<a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#pricing">Pricing</a>
-<a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#faq">FAQ</a>
-<a data-nav-link class="block py-3 text-ink font-medium" href="#book">Contact</a>
+<div id="nav-mobile" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-4 py-2 space-y-0 max-h-[min(70vh,calc(100dvh-5.5rem-env(safe-area-inset-top,0px)))] overflow-y-auto overscroll-contain">
+<a data-nav-link class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="#how-it-works">How it works</a>
+<a data-nav-link class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="#pricing">Pricing</a>
+<a data-nav-link class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="#faq">FAQ</a>
+<a data-nav-link class="flex min-h-[48px] items-center text-ink font-medium py-2" href="#book">Contact</a>
 </div>
 </nav>
 </header>
@@ -673,7 +674,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <label class="block" for="pb-stage">
 <span class="text-editorial-caps text-muted mb-2 block">Project stage</span>
 <select id="pb-stage" name="stage" required class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink">
-<option value="" selected>Select one</option>
+<option value="" selected disabled hidden>Select one</option>
 <option value="Exploring">Exploring / budgeting</option>
 <option value="Ready for design">Ready for design</option>
 <option value="Already have bids">Already have bids · need help comparing</option>
@@ -751,7 +752,7 @@ PoolBidder
 
 <script>
 (function () {
-  var baseUrl = window.location.origin + window.location.pathname;
+  var baseUrl = window.location.origin + '/';
   var form = document.getElementById('consult-form');
   var success = document.getElementById('form-success');
   var nextInput = document.createElement('input');
@@ -832,6 +833,12 @@ PoolBidder
     panel.classList.toggle('hidden', !open);
     if (icon) icon.textContent = open ? 'close' : 'menu';
     document.body.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      var first = panel.querySelector('a');
+      if (first) window.setTimeout(function () { try { first.focus(); } catch (e) {} }, 0);
+    } else {
+      window.setTimeout(function () { try { toggle.focus(); } catch (e) {} }, 0);
+    }
   }
   toggle.addEventListener('click', function () { setOpen(panel.classList.contains('hidden')); });
   panel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
