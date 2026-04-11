@@ -14,7 +14,10 @@
 <meta property="og:description" content="Stop being sold. Own your plans, compare apples-to-apples bids, and let an advocate run the builder process for you."/>
 <meta property="og:url" content="https://poolbid-landing.vercel.app/"/>
 <meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"/>
 <meta name="twitter:title" content="PoolBidder | Pool Design &amp; Bidding Advocate"/>
 <meta name="twitter:description" content="Independent advocacy—design, specs, and competitive bids for your pool project."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -122,6 +125,54 @@ tailwind.config = {
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why not go straight to a builder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can—but margin and commissions are often embedded. When you arrive with independent plans and specs, builders know you can compare, which pulls pricing toward a competitive baseline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build the pool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We are independent advocates and do not take kickbacks from builders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I already have a sketch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can use it as the starting point for technical plans that support accurate, comparable bids."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the process take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roughly 5–7 days for an initial design pass and about two weeks to first bids—market dependent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after I submit the form?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You will see an on-page confirmation and receive an email from our form provider. We reply within one business day with next steps—or a polite decline if we are not a fit."
+      }
+    }
+  ]
+}
+</script>
 <!-- FormSubmit: first submission confirms hello@poolbidder.com — replace email in form action if needed -->
 </head>
 <body class="bg-paper text-ink antialiased">
@@ -140,6 +191,7 @@ tailwind.config = {
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#how-it-works">How it works</a>
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#pricing">Pricing</a>
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#faq">FAQ</a>
+<a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#book">Contact</a>
 </div>
 <div class="flex items-center gap-2 sm:gap-3">
 <a href="#book" class="hidden sm:inline-flex items-center justify-center bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity">Book consult</a>
@@ -152,6 +204,7 @@ tailwind.config = {
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#how-it-works">How it works</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#pricing">Pricing</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#faq">FAQ</a>
+<a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#book">Contact</a>
 <a class="block sm:hidden mt-4 py-3 text-center bg-ink text-paper text-sm font-medium" href="#book">Book consult</a>
 </div>
 </nav>
@@ -479,7 +532,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <p class="text-muted text-sm leading-relaxed">Thanks for reaching out. Check your inbox for a confirmation—we will follow up shortly.</p>
 <a href="#top" class="inline-block mt-6 text-sm font-semibold text-brand underline underline-offset-4">Back to top</a>
 </div>
-<form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com">
+<form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com" autocomplete="on" name="consult">
 <input type="hidden" name="_subject" value="PoolBidder — Consultation request"/>
 <input type="hidden" name="_template" value="table"/>
 <input type="hidden" name="_captcha" value="false"/>
@@ -609,6 +662,10 @@ PoolBidder
   if (params.get('thanks') === '1') {
     showInlineSuccess();
     try { history.replaceState(null, '', baseUrl + '#book'); } catch (e) {}
+    window.requestAnimationFrame(function () {
+      var book = document.getElementById('book');
+      if (book) book.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   }
 
   if (form) {
@@ -641,7 +698,7 @@ PoolBidder
 })();
 
 (function () {
-  var sectionIds = ['how-it-works', 'pricing', 'faq'];
+  var sectionIds = ['how-it-works', 'pricing', 'faq', 'book'];
   var links = document.querySelectorAll('[data-nav-link]');
   if (!links.length) return;
   var els = {};
