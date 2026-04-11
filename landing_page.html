@@ -106,6 +106,7 @@ tailwind.config = {
   }
   .touch-target { min-height: 44px; min-width: 44px; }
   .scroll-mt-nav { scroll-margin-top: calc(5.75rem + env(safe-area-inset-top, 0px)); }
+  button, [type="submit"], summary, #sticky-cta-bar a { touch-action: manipulation; }
 </style>
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo" fetchpriority="high"/>
 <script type="application/ld+json">
@@ -123,6 +124,7 @@ tailwind.config = {
       "dateModified": "2026-04-11",
       "isPartOf": { "@id": "https://poolbid-landing.vercel.app/#website" },
       "about": { "@id": "https://poolbid-landing.vercel.app/#organization" },
+      "significantLink": "https://poolbid-landing.vercel.app/#book",
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo",
@@ -170,11 +172,13 @@ tailwind.config = {
       "@type": "ProfessionalService",
       "@id": "https://poolbid-landing.vercel.app/#service",
       "name": "Pool design and bidding advocacy",
+      "url": "https://poolbid-landing.vercel.app/#pricing",
       "serviceType": "Home improvement advisory",
       "provider": { "@id": "https://poolbid-landing.vercel.app/#organization" },
       "areaServed": { "@type": "Country", "name": "United States" },
       "offers": {
         "@type": "Offer",
+        "name": "Advocate Package",
         "price": "499",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
@@ -298,8 +302,8 @@ Your pool. Your plans. Competitive bids.
 We represent you—not builders. Design, unified specs, and a managed bid process so you pay for the pool, not the sales stack.
 </p>
 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
-<a href="#book" class="inline-flex justify-center items-center bg-ink text-paper px-8 py-4 text-base font-semibold hover:opacity-90 transition-opacity">Book a free consultation</a>
-<a href="#stories" class="inline-flex justify-center items-center border border-ink text-ink px-8 py-4 text-base font-semibold hover:bg-mist transition-colors">Homeowner stories</a>
+<a href="#book" class="inline-flex justify-center items-center bg-ink text-paper px-8 py-4 text-base font-semibold min-h-[3rem] hover:opacity-90 active:opacity-90 transition-opacity touch-manipulation">Book a free consultation</a>
+<a href="#stories" class="inline-flex justify-center items-center border border-ink text-ink px-8 py-4 text-base font-semibold min-h-[3rem] hover:bg-mist active:opacity-90 transition-colors touch-manipulation">Homeowner stories</a>
 </div>
 <p class="mt-4 text-sm text-muted max-w-measure leading-relaxed">Fit-first: we only recommend next steps when we believe we can help. <a href="#pricing" class="text-ink font-medium underline underline-offset-2 hover:opacity-80">See the guarantee</a>.</p>
 <p class="mt-8 text-xs text-muted max-w-measure leading-relaxed">Results vary by market and scope. Testimonials are illustrative of homeowner experiences.</p>
@@ -449,6 +453,9 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </ul>
 </div>
 </div>
+<p class="mt-10 text-center md:hidden">
+<a href="#book" class="inline-flex min-h-[3rem] w-full max-w-md mx-auto justify-center items-center bg-ink text-paper px-6 text-sm font-semibold hover:opacity-90 active:opacity-90 transition-opacity touch-manipulation">Get an advocate on your side</a>
+</p>
 </div>
 </section>
 
@@ -484,7 +491,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 <div class="px-8 sm:px-12 pb-10">
 <p class="text-center text-sm text-muted leading-relaxed mb-6">Fit guarantee: if we are not the right fit after your discovery call, we will say so before you pay for design.</p>
-<a href="#book" class="flex w-full justify-center items-center bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity">Request a consult</a>
+<a href="#book" class="flex w-full min-h-[3rem] justify-center items-center bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 active:opacity-90 transition-opacity touch-manipulation">Request a consult</a>
 </div>
 </div>
 </div>
@@ -705,7 +712,7 @@ PoolBidder
 <div>
 <p class="text-editorial-caps text-muted mb-4">Get updates</p>
 <p class="text-sm text-muted mb-3">Request a consult or email us to join the list.</p>
-<a href="#book" class="inline-flex text-sm font-semibold text-ink border border-ink px-4 py-2 hover:bg-mist transition-colors">Request consultation</a>
+<a href="#book" class="inline-flex min-h-[44px] items-center text-sm font-semibold text-ink border border-ink px-4 py-2 hover:bg-mist active:opacity-90 transition-colors touch-manipulation">Request consultation</a>
 </div>
 </div>
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8 border-t border-line text-sm text-muted">
