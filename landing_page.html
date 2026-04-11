@@ -9,6 +9,7 @@
 <meta name="color-scheme" content="light"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="PoolBidder"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
 <meta name="robots" content="index, follow"/>
 <title>PoolBidder | Professional Pool Design &amp; Bidding Advocate</title>
 <meta name="description" content="Independent pool design and bidding advocacy. Plans you own, unified bid specs, competitive bids—save thousands without sales pressure. Book a free consult."/>
@@ -114,6 +115,15 @@ tailwind.config = {
   .scroll-mt-nav { scroll-margin-top: calc(5.75rem + env(safe-area-inset-top, 0px)); }
   button, [type="submit"], summary, #sticky-cta-bar a { touch-action: manipulation; }
   #main-content { overscroll-behavior-y: contain; }
+  @media (max-width: 767px) {
+    #consult-form input:not([type="hidden"]),
+    #consult-form select {
+      min-height: 48px;
+    }
+    #consult-form textarea {
+      min-height: 7.5rem;
+    }
+  }
 </style>
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo" fetchpriority="high"/>
 <script type="application/ld+json">
@@ -160,6 +170,7 @@ tailwind.config = {
       "@type": "Organization",
       "@id": "https://poolbid-landing.vercel.app/#organization",
       "name": "PoolBidder",
+      "alternateName": "Pool Bidder",
       "url": "https://poolbid-landing.vercel.app/",
       "logo": {
         "@type": "ImageObject",
@@ -270,7 +281,7 @@ tailwind.config = {
 <div id="toast-thanks" class="hidden fixed left-4 right-4 z-[60] max-w-lg mx-auto px-4 py-3 bg-ink text-paper text-sm text-center shadow-lg border border-line top-[calc(4.75rem+env(safe-area-inset-top,0px))]" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <header>
-<nav class="fixed top-0 w-full z-50 bg-paper/95 border-b border-line pt-[env(safe-area-inset-top,0px)]" aria-label="Primary">
+<nav class="fixed top-0 w-full z-50 border-b border-line pt-[env(safe-area-inset-top,0px)] bg-paper/90 backdrop-blur-md supports-[backdrop-filter]:bg-paper/85" aria-label="Primary">
 <div class="flex justify-between items-center max-w-content mx-auto px-4 sm:px-8 min-h-[4.5rem]">
 <a href="#top" class="flex items-center gap-2.5 text-xl sm:text-2xl font-headline font-semibold text-ink tracking-tight group" aria-label="PoolBidder home">
 <svg class="h-8 w-8 sm:h-9 sm:w-9 shrink-0 text-ink" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M6 21c5-9 12-14 20-16" stroke="#faf9f7" stroke-width="1.75" stroke-linecap="round"/><rect x="6" y="22" width="20" height="5" rx="1" fill="#006970"/></svg>
@@ -308,7 +319,7 @@ tailwind.config = {
 <div class="flex flex-col justify-center px-4 sm:px-10 lg:pl-16 lg:pr-14 py-14 lg:py-20 bg-paper">
 <p class="text-editorial-caps text-muted mb-6">Independent advocacy · Homeowners first</p>
 <p class="text-sm text-muted mb-4 max-w-measure border-l-2 border-brand pl-4">Typical outcome: <span class="text-ink font-semibold">$8,400+</span> average savings vs. going builder-direct.</p>
-<h1 class="font-headline font-semibold text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl leading-[1.05] tracking-tight text-ink mb-8 max-w-[22ch]">
+<h1 class="font-headline font-semibold text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl leading-[1.05] tracking-tight text-ink mb-8 max-w-[22ch] text-balance">
 Your pool. Your plans. Competitive bids.
 </h1>
 <p class="text-lg sm:text-xl text-muted leading-relaxed mb-10 max-w-measure font-normal">
@@ -608,7 +619,7 @@ After you submit, you will see on-page confirmation. If your browser shows a qui
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 <div>
 <p class="text-editorial-caps text-muted mb-4">Get started</p>
-<h2 id="book-heading" class="font-headline font-semibold text-4xl sm:text-5xl text-ink mb-6 leading-tight">Book your free consultation</h2>
+<h2 id="book-heading" class="font-headline font-semibold text-4xl sm:text-5xl text-ink mb-6 leading-tight text-balance">Book your free consultation</h2>
 <p class="text-lg text-muted leading-relaxed mb-8 max-w-measure">
 Tell us about your project. We respond within <strong class="text-ink font-semibold">one business day</strong> with next steps—no cold calls, no spam.
 </p>
@@ -675,7 +686,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </label>
 <p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
 <p id="form-guarantee" class="text-xs text-muted leading-relaxed"><a class="text-ink font-medium underline underline-offset-2 hover:opacity-80" href="#pricing">Fit-first guarantee</a> — we only recommend paid design when we believe we can help.</p>
-<button id="pb-submit" type="submit" class="w-full min-h-[52px] sm:min-h-0 bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation" aria-describedby="form-consent form-guarantee">Submit request</button>
+<button id="pb-submit" type="submit" class="w-full min-h-[52px] md:min-h-12 bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation" aria-describedby="form-consent form-guarantee">Submit request</button>
 </form>
 </div>
 </div>
