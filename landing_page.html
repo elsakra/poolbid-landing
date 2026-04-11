@@ -11,6 +11,7 @@
 <title>PoolBidder | Professional Pool Design &amp; Bidding Advocate</title>
 <meta name="description" content="Independent pool design and bidding advocacy. Plans you own, unified bid specs, competitive bids—save thousands without sales pressure. Book a free consult."/>
 <meta name="author" content="PoolBidder"/>
+<meta name="geo.region" content="US"/>
 <link rel="canonical" href="https://poolbid-landing.vercel.app/"/>
 <link rel="alternate" hreflang="en" href="https://poolbid-landing.vercel.app/"/>
 <link rel="alternate" hreflang="x-default" href="https://poolbid-landing.vercel.app/"/>
@@ -32,6 +33,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="dns-prefetch" href="https://formsubmit.co"/>
+<link rel="dns-prefetch" href="https://lh3.googleusercontent.com"/>
+<link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111111'/%3E%3Cpath fill='none' stroke='%23faf9f7' stroke-width='2' d='M6 20c4-8 10-12 20-14'/%3E%3Cpath fill='%23006970' d='M6 22h20v4H6z' opacity='.9'/%3E%3C/svg%3E" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%23111111'/%3E%3Ctext x='90' y='118' font-family='Georgia,serif' font-size='72' fill='%23faf9f7' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -116,6 +119,7 @@ tailwind.config = {
       "name": "PoolBidder | Professional Pool Design & Bidding Advocate",
       "description": "Independent pool design and bidding advocacy. Plans you own, unified bid specs, competitive bids.",
       "inLanguage": "en-US",
+      "datePublished": "2026-04-11",
       "dateModified": "2026-04-11",
       "isPartOf": { "@id": "https://poolbid-landing.vercel.app/#website" },
       "about": { "@id": "https://poolbid-landing.vercel.app/#organization" },
@@ -164,6 +168,7 @@ tailwind.config = {
     },
     {
       "@type": "ProfessionalService",
+      "@id": "https://poolbid-landing.vercel.app/#service",
       "name": "Pool design and bidding advocacy",
       "serviceType": "Home improvement advisory",
       "provider": { "@id": "https://poolbid-landing.vercel.app/#organization" },
@@ -180,6 +185,8 @@ tailwind.config = {
     },
     {
       "@type": "FAQPage",
+      "@id": "https://poolbid-landing.vercel.app/#faq-schema",
+      "isPartOf": { "@id": "https://poolbid-landing.vercel.app/#website" },
       "mainEntity": [
     {
       "@type": "Question",
@@ -511,6 +518,9 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </figure>
 </div>
 <p class="mt-10 text-xs text-muted max-w-2xl">Representative feedback; not a guarantee of results.</p>
+<p class="mt-8">
+<a href="#book" class="inline-flex justify-center items-center w-full sm:w-auto min-h-[3rem] px-8 py-3.5 bg-ink text-paper text-sm font-semibold hover:opacity-90 active:opacity-90 transition-opacity">Book a free consultation</a>
+</p>
 </div>
 </section>
 
@@ -639,7 +649,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </label>
 <label class="block" for="pb-message">
 <span class="text-editorial-caps text-muted mb-2 block">What should we know?</span>
-<textarea id="pb-message" name="message" rows="4" enterkeyhint="done" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
+<textarea id="pb-message" name="message" rows="4" enterkeyhint="done" spellcheck="true" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
 </label>
 <p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
 <button id="pb-submit" type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed" aria-describedby="form-consent">Submit request</button>
@@ -742,7 +752,9 @@ PoolBidder
     try { history.replaceState(null, '', baseUrl + '#book'); } catch (e) {}
     window.requestAnimationFrame(function () {
       var book = document.getElementById('book');
-      if (book) book.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (!book) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      book.scrollIntoView({ behavior: reduce ? 'instant' : 'smooth', block: 'start' });
     });
   }
 
@@ -850,6 +862,10 @@ PoolBidder
     });
   });
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { pickSectionFromScroll(); });
+  window.addEventListener('orientationchange', function () {
+    window.setTimeout(pickSectionFromScroll, 200);
+  });
   window.addEventListener('hashchange', function () {
     var id = (location.hash || '').replace(/^#/, '');
     if (sectionIds.indexOf(id) !== -1) setActive(id);
