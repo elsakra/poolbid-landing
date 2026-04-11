@@ -13,6 +13,7 @@
 <meta property="og:title" content="PoolBidder | Professional Pool Design &amp; Bidding Advocate"/>
 <meta property="og:description" content="Stop being sold. Own your plans, compare apples-to-apples bids, and let an advocate run the builder process for you."/>
 <meta property="og:url" content="https://poolbid-landing.vercel.app/"/>
+<meta property="og:locale" content="en_US"/>
 <meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -84,6 +85,11 @@ tailwind.config = {
   }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+  @media (max-width: 767px) {
+    html {
+      scroll-padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
 </style>
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo" fetchpriority="high"/>
 <script type="application/ld+json">
@@ -102,6 +108,12 @@ tailwind.config = {
       "@type": "Organization",
       "name": "PoolBidder",
       "url": "https://poolbid-landing.vercel.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo",
+        "width": 1200,
+        "height": 630
+      },
       "email": "hello@poolbidder.com",
       "description": "Professional pool design and bidding advocacy. Independent plans, unified bid sheets, and competitive quotes.",
       "contactPoint": {
@@ -165,7 +177,7 @@ tailwind.config = {
       "name": "What happens after I submit the form?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You will see an on-page confirmation and receive an email from our form provider. We reply within one business day with next steps—or a polite decline if we are not a fit."
+        "text": "After you submit, you will see on-page confirmation. If your browser shows a quick spam check, complete it—then check your inbox for an automated confirmation email. We reply within one business day with next steps, or a polite decline if we are not a fit."
       }
     }
       ]
@@ -214,7 +226,7 @@ tailwind.config = {
 <a href="#book" class="flex w-full justify-center items-center bg-ink text-paper py-3.5 text-sm font-semibold">Book free consultation</a>
 </div>
 
-<main id="main-content" class="pb-20 md:pb-0">
+<main id="main-content" class="pb-28 md:pb-0">
 <section id="top" class="min-h-[100svh] lg:min-h-[92svh] grid lg:grid-cols-2 pt-[4.5rem]">
 <div class="flex flex-col justify-center px-4 sm:px-10 lg:pl-16 lg:pr-14 py-14 lg:py-20 order-2 lg:order-1 bg-paper">
 <p class="text-editorial-caps text-muted mb-6">Independent advocacy · Homeowners first</p>
@@ -229,6 +241,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 <a href="#book" class="inline-flex justify-center items-center bg-ink text-paper px-8 py-4 text-base font-semibold hover:opacity-90 transition-opacity">Book a free consultation</a>
 <a href="#stories" class="inline-flex justify-center items-center border border-ink text-ink px-8 py-4 text-base font-semibold hover:bg-mist transition-colors">Homeowner stories</a>
 </div>
+<p class="mt-4 text-sm text-muted max-w-measure leading-relaxed">Fit-first: we only recommend next steps when we believe we can help. <a href="#pricing" class="text-ink font-medium underline underline-offset-2 hover:opacity-80">See the guarantee</a>.</p>
 <p class="mt-8 text-xs text-muted max-w-measure leading-relaxed">Results vary by market and scope. Testimonials are illustrative of homeowner experiences.</p>
 </div>
 <div class="relative min-h-[42vh] lg:min-h-full order-1 lg:order-2 border-b border-line lg:border-b-0 lg:border-l">
@@ -496,7 +509,7 @@ What happens after I submit the form?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
 </summary>
 <div class="pb-5 text-muted text-sm leading-relaxed">
-You will see an on-page confirmation and receive an email from our form provider. We reply within one business day with next steps—or a polite decline if we are not a fit.
+After you submit, you will see on-page confirmation. If your browser shows a quick spam check, complete it—then check your inbox for an automated confirmation email. We reply within one business day with next steps, or a polite decline if we are not a fit.
 </div>
 </details>
 </div>
@@ -534,30 +547,29 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com" autocomplete="on" name="consult">
 <input type="hidden" name="_subject" value="PoolBidder — Consultation request"/>
 <input type="hidden" name="_template" value="table"/>
-<input type="hidden" name="_captcha" value="false"/>
 <input type="hidden" name="_autoresponse" value="Thanks for contacting PoolBidder. We received your request and will reply within one business day."/>
 <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
 <label class="block" for="pb-name">
 <span class="text-editorial-caps text-muted mb-2 block">Full name</span>
-<input id="pb-name" type="text" name="name" required autocomplete="name" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-name" type="text" name="name" required autocomplete="name" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
 <label class="block" for="pb-email">
 <span class="text-editorial-caps text-muted mb-2 block">Email</span>
-<input id="pb-email" type="email" name="email" required autocomplete="email" inputmode="email" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-email" type="email" name="email" required autocomplete="email" inputmode="email" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
 <div class="grid sm:grid-cols-2 gap-5">
 <label class="block" for="pb-phone">
 <span class="text-editorial-caps text-muted mb-2 block">Phone <span class="text-muted font-normal normal-case">(optional)</span></span>
-<input id="pb-phone" type="tel" name="phone" autocomplete="tel" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-phone" type="tel" name="phone" autocomplete="tel" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
 <label class="block" for="pb-location">
 <span class="text-editorial-caps text-muted mb-2 block">City / metro</span>
-<input id="pb-location" type="text" name="location" required autocomplete="address-level2" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
+<input id="pb-location" type="text" name="location" required autocomplete="address-level2" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
 </div>
 <label class="block" for="pb-stage">
 <span class="text-editorial-caps text-muted mb-2 block">Project stage</span>
-<select id="pb-stage" name="stage" required class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink">
+<select id="pb-stage" name="stage" required class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink">
 <option value="" selected>Select one</option>
 <option value="Exploring">Exploring / budgeting</option>
 <option value="Ready for design">Ready for design</option>
@@ -567,7 +579,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </label>
 <label class="block" for="pb-message">
 <span class="text-editorial-caps text-muted mb-2 block">What should we know?</span>
-<textarea id="pb-message" name="message" rows="4" class="w-full border border-line bg-paper px-4 py-3 text-ink text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
+<textarea id="pb-message" name="message" rows="4" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
 </label>
 <p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
 <button id="pb-submit" type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed" aria-describedby="form-consent">Submit request</button>
@@ -578,7 +590,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </section>
 </main>
 
-<section id="legal" class="border-t border-line bg-paper scroll-mt-24" aria-labelledby="terms-heading">
+<section id="legal" class="border-t border-line bg-paper scroll-mt-24 max-md:pb-8" aria-labelledby="terms-heading">
 <div class="max-w-content mx-auto px-4 sm:px-8 py-16 sm:py-20">
 <div class="max-w-2xl space-y-12">
 <div>
@@ -593,7 +605,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </div>
 </section>
 
-<footer class="bg-paper border-t border-line w-full py-14">
+<footer class="bg-paper border-t border-line w-full pt-14 pb-[max(5.5rem,env(safe-area-inset-bottom)+4rem)] md:pb-14">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
 <div class="lg:col-span-1">
@@ -696,6 +708,7 @@ PoolBidder
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     panel.classList.toggle('hidden', !open);
     if (icon) icon.textContent = open ? 'close' : 'menu';
+    document.body.style.overflow = open ? 'hidden' : '';
   }
   toggle.addEventListener('click', function () { setOpen(panel.classList.contains('hidden')); });
   panel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
