@@ -14,7 +14,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="PoolBidder | Pool Design &amp; Bidding Advocate"/>
 <meta name="twitter:description" content="Independent advocacy for your pool project—design, specs, and competitive bids."/>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Cpath fill='%23faf9f7' d='M8 22c2-5 7-8 10-10s4-6 8-10v20H8v-4z'/%3E%3C/svg%3E"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111111'/%3E%3Cpath fill='none' stroke='%23faf9f7' stroke-width='2' d='M6 20c4-8 10-12 20-14'/%3E%3Cpath fill='%23006970' d='M6 22h20v4H6z' opacity='.9'/%3E%3C/svg%3E" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%23111111'/%3E%3Ctext x='90' y='118' font-family='Georgia,serif' font-size='72' fill='%23faf9f7' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
@@ -58,6 +59,7 @@ tailwind.config = {
   .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .nav-link { border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; }
   .nav-link.is-active { border-bottom-color: #111; color: #111; font-weight: 600; }
+  a[data-nav-link].is-active { color: #111 !important; font-weight: 600; }
   details.faq-item summary { list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item[open] .faq-chevron { transform: rotate(180deg); }
@@ -105,14 +107,17 @@ tailwind.config = {
 <header>
 <nav class="fixed top-0 w-full z-50 bg-paper/95 border-b border-line" aria-label="Primary">
 <div class="flex justify-between items-center max-w-content mx-auto px-4 sm:px-8 min-h-[4.5rem]">
-<a href="#top" class="text-xl sm:text-2xl font-headline font-semibold text-ink tracking-tight">PoolBidder</a>
+<a href="#top" class="flex items-center gap-2.5 text-xl sm:text-2xl font-headline font-semibold text-ink tracking-tight group" aria-label="PoolBidder home">
+<svg class="h-8 w-8 sm:h-9 sm:w-9 shrink-0 text-ink" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M6 21c5-9 12-14 20-16" stroke="#faf9f7" stroke-width="1.75" stroke-linecap="round"/><rect x="6" y="22" width="20" height="5" rx="1" fill="#006970"/></svg>
+<span>PoolBidder</span>
+</a>
 <div class="hidden md:flex items-center gap-10" id="nav-desktop">
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#how-it-works">How it works</a>
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#pricing">Pricing</a>
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#faq">FAQ</a>
 </div>
 <div class="flex items-center gap-2 sm:gap-3">
-<a href="#book" class="hidden sm:inline-flex items-center justify-center bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity">Get started</a>
+<a href="mailto:hello@poolbidder.com?subject=PoolBidder%20consultation" class="hidden sm:inline-flex items-center justify-center bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity">Get started</a>
 <button type="button" id="nav-toggle" class="md:hidden inline-flex items-center justify-center p-2 text-ink border border-line" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
 <span class="material-symbols-outlined !text-2xl" id="nav-toggle-icon">menu</span>
 </button>
@@ -122,7 +127,7 @@ tailwind.config = {
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#how-it-works">How it works</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#pricing">Pricing</a>
 <a data-nav-link class="block py-3 border-b border-line/60 text-ink font-medium" href="#faq">FAQ</a>
-<a class="block sm:hidden mt-4 py-3 text-center bg-ink text-paper text-sm font-medium" href="#book">Get started</a>
+<a class="block sm:hidden mt-4 py-3 text-center bg-ink text-paper text-sm font-medium" href="mailto:hello@poolbidder.com?subject=PoolBidder%20consultation">Get started</a>
 </div>
 </nav>
 </header>
@@ -140,7 +145,7 @@ Your pool. Your plans. Competitive bids.
 We represent you—not builders. Design, unified specs, and a managed bid process so you pay for the pool, not the sales stack.
 </p>
 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
-<a href="#book" class="inline-flex justify-center items-center bg-ink text-paper px-8 py-4 text-base font-semibold hover:opacity-90 transition-opacity">Book a free consultation</a>
+<a href="mailto:hello@poolbidder.com?subject=PoolBidder%20consultation" class="inline-flex justify-center items-center bg-ink text-paper px-8 py-4 text-base font-semibold hover:opacity-90 transition-opacity">Book a free consultation</a>
 <a href="#stories" class="inline-flex justify-center items-center border border-ink text-ink px-8 py-4 text-base font-semibold hover:bg-mist transition-colors">Homeowner stories</a>
 </div>
 </div>
@@ -159,7 +164,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </section>
 
 <!-- Proof strip -->
-<section id="proof" class="border-y border-line bg-mist reveal">
+<section id="proof" class="border-y border-line bg-mist reveal scroll-mt-24">
 <div class="max-w-content mx-auto px-4 sm:px-8 py-10 sm:py-12">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 md:gap-0">
 <div class="md:border-r md:border-line md:pr-8 lg:pr-12">
@@ -183,7 +188,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </section>
 
 <!-- Problem -->
-<section id="problem" class="py-20 sm:py-28 bg-paper reveal">
+<section id="problem" class="py-20 sm:py-28 bg-paper reveal scroll-mt-24">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="mb-16 sm:mb-20 max-w-3xl">
 <p class="text-editorial-caps text-muted mb-4">The problem</p>
@@ -216,7 +221,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </section>
 
 <!-- How It Works -->
-<section id="how-it-works" class="py-20 sm:py-28 bg-mist reveal">
+<section id="how-it-works" class="py-20 sm:py-28 bg-mist reveal scroll-mt-24">
 <div class="max-w-3xl mx-auto px-4 sm:px-8">
 <div class="mb-14 sm:mb-16">
 <p class="text-editorial-caps text-muted mb-4">Process</p>
@@ -262,7 +267,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </section>
 
 <!-- Comparison -->
-<section id="compare" class="py-20 sm:py-28 bg-paper reveal">
+<section id="compare" class="py-20 sm:py-28 bg-paper reveal scroll-mt-24">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid md:grid-cols-2 gap-px bg-line border border-line">
 <div class="bg-paper p-8 sm:p-12">
@@ -288,7 +293,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </section>
 
 <!-- Pricing -->
-<section id="pricing" class="py-20 sm:py-28 bg-mist reveal">
+<section id="pricing" class="py-20 sm:py-28 bg-mist reveal scroll-mt-24">
 <div class="max-w-2xl mx-auto px-4 sm:px-8">
 <div class="border-2 border-ink bg-paper">
 <div class="border-b border-line px-8 sm:px-12 py-12 text-center">
@@ -320,14 +325,14 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 <div class="px-8 sm:px-12 pb-12">
 <p class="text-center text-sm text-muted leading-relaxed mb-8">If we are not the right fit after your discovery call, we will say so before you pay for design.</p>
-<a href="#book" class="flex w-full justify-center items-center bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity">Start my project</a>
+<a href="mailto:hello@poolbidder.com?subject=PoolBidder%20—%20start%20my%20project" class="flex w-full justify-center items-center bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity">Start my project</a>
 </div>
 </div>
 </div>
 </section>
 
 <!-- Testimonials -->
-<section id="stories" class="py-20 sm:py-28 bg-paper reveal">
+<section id="stories" class="py-20 sm:py-28 bg-paper reveal scroll-mt-24">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="mb-14 sm:mb-16 max-w-2xl">
 <p class="text-editorial-caps text-muted mb-4">Testimonials</p>
@@ -358,7 +363,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="py-20 sm:py-28 bg-mist reveal">
+<section id="faq" class="py-20 sm:py-28 bg-mist reveal scroll-mt-24">
 <div class="max-w-2xl mx-auto px-4 sm:px-8">
 <div class="mb-12">
 <p class="text-editorial-caps text-muted mb-4">FAQ</p>
@@ -413,17 +418,35 @@ Roughly 5–7 days for an initial design pass and about two weeks to first bids�
 <p class="text-lg text-paper/70 mb-10 leading-relaxed max-w-xl mx-auto">
 Hundreds of homeowners have used PoolBidder to stay in control—and save an average of $8,400. Current onboarding lead time: about two weeks.
 </p>
-<a href="#book" class="inline-flex items-center justify-center bg-paper text-ink px-10 py-4 sm:py-5 text-lg font-semibold hover:opacity-90 transition-opacity">Book my free consultation</a>
+<a href="mailto:hello@poolbidder.com?subject=PoolBidder%20consultation" class="inline-flex items-center justify-center bg-paper text-ink px-10 py-4 sm:py-5 text-lg font-semibold hover:opacity-90 transition-opacity">Book my free consultation</a>
 <p class="mt-8 text-paper/45 text-sm">Limited spots each month—by design.</p>
 </div>
 </section>
 </main>
 
+<section id="legal" class="border-t border-line bg-mist scroll-mt-24" aria-labelledby="terms">
+<div class="max-w-content mx-auto px-4 sm:px-8 py-16 sm:py-20">
+<div class="max-w-2xl space-y-12">
+<div>
+<h2 id="terms" class="font-headline font-semibold text-2xl text-ink mb-4">Terms of Service</h2>
+<p class="text-sm text-muted leading-relaxed">Placeholder: final Terms of Service will be published here. Until then, engagements are governed by your signed agreement with PoolBidder.</p>
+</div>
+<div>
+<h2 id="privacy" class="font-headline font-semibold text-2xl text-ink mb-4">Privacy Policy</h2>
+<p class="text-sm text-muted leading-relaxed">Placeholder: privacy policy will be published here. We only use your contact information to respond to inquiries and provide services you request.</p>
+</div>
+</div>
+</div>
+</section>
+
 <footer class="bg-paper border-t border-line w-full py-14">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
 <div class="lg:col-span-1">
-<div class="font-headline font-semibold text-xl text-ink mb-2">PoolBidder</div>
+<div class="flex items-center gap-2.5 font-headline font-semibold text-xl text-ink mb-2">
+<svg class="h-8 w-8 shrink-0 text-ink" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M6 21c5-9 12-14 20-16" stroke="#faf9f7" stroke-width="1.75" stroke-linecap="round"/><rect x="6" y="22" width="20" height="5" rx="1" fill="#006970"/></svg>
+PoolBidder
+</div>
 <p class="text-sm text-muted leading-relaxed max-w-xs">Independent pool design and bidding advocacy for homeowners.</p>
 </div>
 <div>
@@ -437,15 +460,15 @@ Hundreds of homeowners have used PoolBidder to stay in control—and save an ave
 <div>
 <p class="text-editorial-caps text-muted mb-4">Company</p>
 <ul class="space-y-3 text-sm">
-<li><a class="text-ink hover:underline underline-offset-4" href="#">Terms of Service</a></li>
-<li><a class="text-ink hover:underline underline-offset-4" href="#">Privacy Policy</a></li>
-<li><a class="text-ink hover:underline underline-offset-4" href="#">Contact</a></li>
+<li><a class="text-ink hover:underline underline-offset-4" href="#terms">Terms of Service</a></li>
+<li><a class="text-ink hover:underline underline-offset-4" href="#privacy">Privacy Policy</a></li>
+<li><a class="text-ink hover:underline underline-offset-4" href="mailto:hello@poolbidder.com">Contact</a></li>
 </ul>
 </div>
 <div>
 <p class="text-editorial-caps text-muted mb-4">Get updates</p>
 <p class="text-sm text-muted mb-3">Big ideas for homeowners building pools—occasionally.</p>
-<a href="#book" class="inline-flex text-sm font-semibold text-ink border border-ink px-4 py-2 hover:bg-mist transition-colors">Subscribe via consult</a>
+<a href="mailto:hello@poolbidder.com?subject=PoolBidder%20updates" class="inline-flex text-sm font-semibold text-ink border border-ink px-4 py-2 hover:bg-mist transition-colors">Email us to subscribe</a>
 </div>
 </div>
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8 border-t border-line text-sm text-muted">
@@ -473,28 +496,84 @@ Hundreds of homeowners have used PoolBidder to stay in control—and save an ave
 })();
 
 (function () {
-  var sections = ['how-it-works', 'pricing', 'faq'];
+  var sectionIds = ['how-it-works', 'pricing', 'faq'];
   var links = document.querySelectorAll('[data-nav-link]');
   if (!links.length) return;
-  var map = {};
-  sections.forEach(function (id) { var el = document.getElementById(id); if (el) map[id] = el; });
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = entry.target.id;
-        links.forEach(function (link) {
-          var match = link.getAttribute('href') === '#' + id;
-          link.classList.toggle('is-active', match);
-          link.classList.toggle('text-ink', match);
-          link.classList.toggle('font-semibold', match);
-          link.classList.toggle('text-muted', !match);
-        });
-      });
-    },
-    { rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5] }
-  );
-  sections.forEach(function (id) { if (map[id]) observer.observe(map[id]); });
+
+  var els = {};
+  sectionIds.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) els[id] = el;
+  });
+
+  function setActive(id) {
+    if (sectionIds.indexOf(id) === -1) return;
+    links.forEach(function (link) {
+      var match = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('is-active', match);
+      link.classList.toggle('text-ink', match);
+      link.classList.toggle('font-semibold', match);
+      link.classList.toggle('text-muted', !match);
+      link.setAttribute('aria-current', match ? 'page' : 'false');
+    });
+  }
+
+  function pickSectionFromScroll() {
+    var navOffset = 80;
+    var viewMid = navOffset + (window.innerHeight - navOffset) * 0.35;
+    var bestId = null;
+    var bestScore = -1;
+    sectionIds.forEach(function (id) {
+      var el = els[id];
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      var visibleTop = Math.max(r.top, navOffset);
+      var visibleBottom = Math.min(r.bottom, window.innerHeight);
+      var visible = Math.max(0, visibleBottom - visibleTop);
+      var h = Math.min(r.height, window.innerHeight);
+      var ratio = h ? visible / h : 0;
+      var center = r.top + r.height / 2;
+      var dist = Math.abs(center - viewMid);
+      var score = ratio * 100 - dist * 0.01;
+      if (visible > 0 && score > bestScore) {
+        bestScore = score;
+        bestId = id;
+      }
+    });
+    if (bestId) setActive(bestId);
+  }
+
+  var scrollTimer;
+  function onScroll() {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(pickSectionFromScroll, 50);
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function () {
+      var id = (link.getAttribute('href') || '').replace(/^#/, '');
+      window.setTimeout(function () { setActive(id); }, 0);
+    });
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('hashchange', function () {
+    var id = (location.hash || '').replace(/^#/, '');
+    if (sectionIds.indexOf(id) !== -1) setActive(id);
+  });
+
+  sectionIds.forEach(function (id) {
+    if (!els[id]) return;
+    var o = new IntersectionObserver(
+      function () { pickSectionFromScroll(); },
+      { rootMargin: '-35% 0px -35% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] }
+    );
+    o.observe(els[id]);
+  });
+
+  pickSectionFromScroll();
+  var initial = (location.hash || '').replace(/^#/, '');
+  if (sectionIds.indexOf(initial) !== -1) setActive(initial);
 })();
 
 (function () {
