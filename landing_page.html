@@ -9,6 +9,7 @@
 <meta name="robots" content="index, follow"/>
 <title>PoolBidder | Professional Pool Design &amp; Bidding Advocate</title>
 <meta name="description" content="Independent pool design and bidding advocacy. Plans you own, unified bid specs, competitive bids—save thousands without sales pressure. Book a free consult."/>
+<meta name="author" content="PoolBidder"/>
 <link rel="canonical" href="https://poolbid-landing.vercel.app/"/>
 <link rel="alternate" hreflang="en" href="https://poolbid-landing.vercel.app/"/>
 <link rel="alternate" hreflang="x-default" href="https://poolbid-landing.vercel.app/"/>
@@ -98,6 +99,7 @@ tailwind.config = {
     }
   }
   .touch-target { min-height: 44px; min-width: 44px; }
+  .scroll-mt-nav { scroll-margin-top: calc(5.75rem + env(safe-area-inset-top, 0px)); }
 </style>
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo" fetchpriority="high"/>
 <script type="application/ld+json">
@@ -105,13 +107,30 @@ tailwind.config = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://poolbid-landing.vercel.app/#webpage",
+      "url": "https://poolbid-landing.vercel.app/",
+      "name": "PoolBidder | Professional Pool Design & Bidding Advocate",
+      "description": "Independent pool design and bidding advocacy. Plans you own, unified bid specs, competitive bids.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://poolbid-landing.vercel.app/#website" },
+      "about": { "@id": "https://poolbid-landing.vercel.app/#organization" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo",
+        "width": 1200,
+        "height": 630
+      }
+    },
+    {
       "@type": "WebSite",
       "@id": "https://poolbid-landing.vercel.app/#website",
       "name": "PoolBidder",
       "url": "https://poolbid-landing.vercel.app/",
       "inLanguage": "en-US",
       "description": "Independent pool design and bidding advocacy for U.S. homeowners.",
-      "publisher": { "@id": "https://poolbid-landing.vercel.app/#organization" }
+      "publisher": { "@id": "https://poolbid-landing.vercel.app/#organization" },
+      "mainEntity": { "@id": "https://poolbid-landing.vercel.app/#organization" }
     },
     {
       "@type": "Organization",
@@ -202,7 +221,7 @@ tailwind.config = {
 <body class="bg-paper text-ink antialiased">
 <a href="#main-content" class="sr-only skip-link">Skip to content</a>
 
-<div id="toast-thanks" class="hidden fixed left-4 right-4 z-[60] max-w-lg mx-auto px-4 py-3 bg-ink text-paper text-sm text-center shadow-lg border border-line top-[calc(4.75rem+env(safe-area-inset-top,0px))]" role="status" aria-live="polite"></div>
+<div id="toast-thanks" class="hidden fixed left-4 right-4 z-[60] max-w-lg mx-auto px-4 py-3 bg-ink text-paper text-sm text-center shadow-lg border border-line top-[calc(4.75rem+env(safe-area-inset-top,0px))]" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <header>
 <nav class="fixed top-0 w-full z-50 bg-paper/95 border-b border-line pt-[env(safe-area-inset-top,0px)]" aria-label="Primary">
@@ -234,8 +253,8 @@ tailwind.config = {
 </header>
 
 <!-- Sticky mobile CTA (conversion pattern) -->
-<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden border-t border-line bg-paper/95 backdrop-blur-sm px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]" role="region" aria-label="Quick action">
-<a href="#book" class="flex w-full min-h-[3rem] justify-center items-center bg-ink text-paper py-3.5 text-sm font-semibold">Book free consultation</a>
+<div id="sticky-cta-bar" class="fixed bottom-0 left-0 right-0 z-40 md:hidden border-t border-line bg-paper/95 backdrop-blur-sm px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition-opacity duration-200 ease-out" role="region" aria-label="Quick action">
+<a href="#book" class="flex w-full min-h-[3rem] justify-center items-center bg-ink text-paper py-3.5 text-sm font-semibold rounded-t-lg">Book free consultation</a>
 </div>
 
 <main id="main-content" class="pb-28 md:pb-0">
@@ -271,7 +290,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 </section>
 
-<section id="proof" class="border-y border-line bg-mist reveal scroll-mt-24">
+<section id="proof" class="border-y border-line bg-mist reveal scroll-mt-nav">
 <div class="max-w-content mx-auto px-4 sm:px-8 py-10 sm:py-12">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 md:gap-0">
 <div class="md:border-r md:border-line md:pr-8 lg:pr-12">
@@ -302,7 +321,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 </section>
 
-<section id="problem" class="py-20 sm:py-28 bg-paper reveal scroll-mt-24">
+<section id="problem" class="py-20 sm:py-28 bg-paper reveal scroll-mt-nav">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="mb-16 sm:mb-20 max-w-3xl">
 <p class="text-editorial-caps text-muted mb-4">The problem</p>
@@ -334,7 +353,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 </section>
 
-<section id="how-it-works" class="py-20 sm:py-28 bg-mist reveal scroll-mt-24">
+<section id="how-it-works" class="py-20 sm:py-28 bg-mist reveal scroll-mt-nav">
 <div class="max-w-3xl mx-auto px-4 sm:px-8">
 <div class="mb-14 sm:mb-16">
 <p class="text-editorial-caps text-muted mb-4">Process</p>
@@ -379,7 +398,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 </section>
 
-<section id="compare" class="py-20 sm:py-28 bg-paper reveal scroll-mt-24">
+<section id="compare" class="py-20 sm:py-28 bg-paper reveal scroll-mt-nav">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid md:grid-cols-2 gap-px bg-line border border-line">
 <div class="bg-paper p-8 sm:p-12">
@@ -404,7 +423,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 </section>
 
-<section id="pricing" class="py-20 sm:py-28 bg-mist reveal scroll-mt-24">
+<section id="pricing" class="py-20 sm:py-28 bg-mist reveal scroll-mt-nav">
 <div class="max-w-2xl mx-auto px-4 sm:px-8">
 <div class="border-2 border-ink bg-paper">
 <div class="border-b border-line px-8 sm:px-12 py-12 text-center">
@@ -442,7 +461,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 </section>
 
-<section id="stories" class="py-20 sm:py-28 bg-paper reveal scroll-mt-24">
+<section id="stories" class="py-20 sm:py-28 bg-paper reveal scroll-mt-nav">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="mb-14 sm:mb-16 max-w-2xl">
 <p class="text-editorial-caps text-muted mb-4">Testimonials</p>
@@ -473,7 +492,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 </div>
 </section>
 
-<section id="faq" class="py-20 sm:py-28 bg-mist reveal scroll-mt-24">
+<section id="faq" class="py-20 sm:py-28 bg-mist reveal scroll-mt-nav">
 <div class="max-w-2xl mx-auto px-4 sm:px-8">
 <div class="mb-12">
 <p class="text-editorial-caps text-muted mb-4">FAQ</p>
@@ -530,7 +549,7 @@ After you submit, you will see on-page confirmation. If your browser shows a qui
 </section>
 
 <!-- Conversion: lead form + end-to-end workflow (FormSubmit) -->
-<section id="book" class="py-20 sm:py-28 bg-mist border-t border-line scroll-mt-24">
+<section id="book" class="py-20 sm:py-28 bg-mist border-t border-line scroll-mt-nav">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 <div>
@@ -592,7 +611,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </label>
 <label class="block" for="pb-message">
 <span class="text-editorial-caps text-muted mb-2 block">What should we know?</span>
-<textarea id="pb-message" name="message" rows="4" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
+<textarea id="pb-message" name="message" rows="4" enterkeyhint="done" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
 </label>
 <p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
 <button id="pb-submit" type="submit" class="w-full bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed" aria-describedby="form-consent">Submit request</button>
@@ -603,7 +622,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </section>
 </main>
 
-<section id="legal" class="border-t border-line bg-paper scroll-mt-24 max-md:pb-8" aria-labelledby="terms-heading">
+<section id="legal" class="border-t border-line bg-paper scroll-mt-nav max-md:pb-8" aria-labelledby="terms-heading">
 <div class="max-w-content mx-auto px-4 sm:px-8 py-16 sm:py-20">
 <div class="max-w-2xl space-y-12">
 <div>
@@ -691,6 +710,7 @@ PoolBidder
   var params = new URLSearchParams(window.location.search);
   if (params.get('thanks') === '1') {
     showInlineSuccess();
+    try { document.title = 'Thanks — PoolBidder'; } catch (e) {}
     try { history.replaceState(null, '', baseUrl + '#book'); } catch (e) {}
     window.requestAnimationFrame(function () {
       var book = document.getElementById('book');
@@ -761,7 +781,8 @@ PoolBidder
     });
   }
   function pickSectionFromScroll() {
-    var navOffset = 80;
+    var navEl = document.querySelector('header nav');
+    var navOffset = navEl ? navEl.offsetHeight : 88;
     var bestId = null;
     var bestScore = -1;
     sectionIds.forEach(function (id) {
@@ -826,6 +847,27 @@ PoolBidder
     { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
   );
   els.forEach(function (el) { obs.observe(el); });
+})();
+
+(function () {
+  var bar = document.getElementById('sticky-cta-bar');
+  var book = document.getElementById('book');
+  if (!bar || !book) return;
+  if (window.matchMedia('(min-width: 768px)').matches) return;
+  function setHidden(hide) {
+    bar.classList.toggle('opacity-0', hide);
+    bar.classList.toggle('pointer-events-none', hide);
+    bar.setAttribute('aria-hidden', hide ? 'true' : 'false');
+  }
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (en) {
+        if (en.target === book) setHidden(en.isIntersecting);
+      });
+    },
+    { rootMargin: '0px 0px -10% 0px', threshold: [0, 0.1, 0.2] }
+  );
+  io.observe(book);
 })();
 </script>
 </body>
