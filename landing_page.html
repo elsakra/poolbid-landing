@@ -2,7 +2,9 @@
 <html class="scroll-smooth" lang="en" data-default-title="PoolBidder | Professional Pool Design &amp; Bidding Advocate">
 <head>
 <meta charset="utf-8"/>
+<meta http-equiv="content-language" content="en-US"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="application-name" content="PoolBidder"/>
 <meta name="theme-color" content="#faf9f7"/>
 <meta name="color-scheme" content="light"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -22,6 +24,7 @@
 <meta property="og:url" content="https://poolbid-landing.vercel.app/"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"/>
+<meta property="og:image:secure_url" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Luxury pool and modern architecture — independent pool design and bidding advocacy"/>
@@ -107,6 +110,7 @@ tailwind.config = {
   .touch-target { min-height: 44px; min-width: 44px; }
   .scroll-mt-nav { scroll-margin-top: calc(5.75rem + env(safe-area-inset-top, 0px)); }
   button, [type="submit"], summary, #sticky-cta-bar a { touch-action: manipulation; }
+  #main-content { overscroll-behavior-y: contain; }
 </style>
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo" fetchpriority="high"/>
 <script type="application/ld+json">
@@ -125,6 +129,8 @@ tailwind.config = {
       "isPartOf": { "@id": "https://poolbid-landing.vercel.app/#website" },
       "about": { "@id": "https://poolbid-landing.vercel.app/#organization" },
       "significantLink": "https://poolbid-landing.vercel.app/#book",
+      "mentions": [{ "@id": "https://poolbid-landing.vercel.app/#service" }],
+      "breadcrumb": { "@id": "https://poolbid-landing.vercel.app/#breadcrumb" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo",
@@ -190,6 +196,8 @@ tailwind.config = {
     {
       "@type": "FAQPage",
       "@id": "https://poolbid-landing.vercel.app/#faq-schema",
+      "url": "https://poolbid-landing.vercel.app/#faq",
+      "mainEntityOfPage": { "@id": "https://poolbid-landing.vercel.app/#webpage" },
       "isPartOf": { "@id": "https://poolbid-landing.vercel.app/#website" },
       "mainEntity": [
     {
@@ -270,7 +278,7 @@ tailwind.config = {
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#book">Contact</a>
 </div>
 <div class="flex items-center gap-2 sm:gap-3">
-<a href="#book" class="hidden sm:inline-flex items-center justify-center bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity">Book consult</a>
+<a href="#book" class="hidden sm:inline-flex items-center justify-center min-h-[44px] bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity">Book consult</a>
 <button type="button" id="nav-toggle" class="md:hidden touch-target inline-flex items-center justify-center -mr-1 px-2 text-ink border border-line" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
 <span class="material-symbols-outlined !text-2xl" id="nav-toggle-icon">menu</span>
 </button>
@@ -828,7 +836,7 @@ PoolBidder
       link.classList.toggle('text-ink', match);
       link.classList.toggle('font-semibold', match);
       link.classList.toggle('text-muted', !match);
-      if (match) link.setAttribute('aria-current', 'page');
+      if (match) link.setAttribute('aria-current', 'true');
       else link.removeAttribute('aria-current');
     });
   }
