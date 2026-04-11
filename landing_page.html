@@ -300,7 +300,7 @@ tailwind.config = {
 
 <main id="main-content" class="pb-28 md:pb-0">
 <section id="top" class="min-h-[100svh] lg:min-h-[92svh] grid lg:grid-cols-2 pt-[calc(4.5rem+env(safe-area-inset-top,0px))]">
-<div class="flex flex-col justify-center px-4 sm:px-10 lg:pl-16 lg:pr-14 py-14 lg:py-20 order-2 lg:order-1 bg-paper">
+<div class="flex flex-col justify-center px-4 sm:px-10 lg:pl-16 lg:pr-14 py-14 lg:py-20 bg-paper">
 <p class="text-editorial-caps text-muted mb-6">Independent advocacy · Homeowners first</p>
 <p class="text-sm text-muted mb-4 max-w-measure border-l-2 border-brand pl-4">Typical outcome: <span class="text-ink font-semibold">$8,400+</span> average savings vs. going builder-direct.</p>
 <h1 class="font-headline font-semibold text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl leading-[1.05] tracking-tight text-ink mb-8 max-w-[22ch]">
@@ -316,10 +316,10 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 <p class="mt-4 text-sm text-muted max-w-measure leading-relaxed">Fit-first: we only recommend next steps when we believe we can help. <a href="#pricing" class="text-ink font-medium underline underline-offset-2 hover:opacity-80">See the guarantee</a>.</p>
 <p class="mt-8 text-xs text-muted max-w-measure leading-relaxed">Results vary by market and scope. Testimonials are illustrative of homeowner experiences.</p>
 </div>
-<div class="relative min-h-[42vh] lg:min-h-full order-1 lg:order-2 border-b border-line lg:border-b-0 lg:border-l">
+<div class="relative min-h-[38vh] sm:min-h-[42vh] lg:min-h-full border-b border-line/80 lg:border-b-0 lg:border-l lg:border-line/60 overflow-hidden">
 <img
   alt="Luxury pool and modern architecture"
-  class="absolute inset-0 w-full h-full object-cover"
+  class="absolute inset-0 w-full h-full object-cover object-[center_35%] lg:object-[58%_45%]"
   width="1920"
   height="1080"
   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -327,7 +327,9 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
   decoding="async"
   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtE5cPS7iZ_D1UAp3exa7TM38JVwevAycBomt47PAHW6kjPjY8mnGkMSRD43JGzRKxgbW3gWIfb1Kpu10wYiLYK1GoaQGbcnBWt80CmSNU9NshCsInV-ckshyUllywts1XJvtCY5n8vMxSL09rT_2gWZcmSRF5i_eTsGUa162HojV4vIJTz62yE3trxRsLjv2Z_YQ3PJsEQBLEoqMKEAqEef1AECCytfbqZDxc89D43LxqQ9Jbccme0zgo4OvkR45vhjyTnv5KlPo"
 />
-<div class="absolute inset-0 bg-gradient-to-t from-paper/90 via-transparent to-transparent lg:bg-gradient-to-l lg:from-paper lg:via-paper/20 lg:to-transparent lg:w-[min(45%,12rem)]" aria-hidden="true"></div>
+<!-- Mobile: bottom fade into next section. Desktop: soft left edge into text column (no narrow opaque band). -->
+<div class="absolute inset-0 bg-gradient-to-t from-paper/85 via-transparent to-transparent pointer-events-none lg:hidden" aria-hidden="true"></div>
+<div class="absolute inset-y-0 left-0 w-[min(28rem,58%)] bg-gradient-to-r from-paper via-paper/45 via-45% to-transparent pointer-events-none hidden lg:block" aria-hidden="true"></div>
 </div>
 </section>
 
