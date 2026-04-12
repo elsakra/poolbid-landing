@@ -1,5 +1,12 @@
 {
-  "rewrites": [{ "source": "/", "destination": "/landing_page.html" }],
+  "rewrites": [
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/guarantee", "destination": "/guarantee.html" },
+    { "source": "/cookies", "destination": "/cookies.html" },
+    { "source": "/", "destination": "/landing_page.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -12,4 +19,3 @@
     }
   ]
 }
-

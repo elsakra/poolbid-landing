@@ -331,7 +331,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 <a href="#book" class="inline-flex justify-center items-center bg-ink text-paper px-8 py-4 text-base font-semibold min-h-[3rem] hover:opacity-90 active:opacity-90 transition-opacity touch-manipulation">Book a free consultation</a>
 <a href="#stories" class="inline-flex justify-center items-center border border-ink text-ink px-8 py-4 text-base font-semibold min-h-[3rem] hover:bg-mist active:opacity-90 transition-colors touch-manipulation">Homeowner stories</a>
 </div>
-<p class="mt-4 text-sm text-muted max-w-measure leading-relaxed">Fit-first: we only recommend next steps when we believe we can help. <a href="#pricing" class="text-ink font-medium underline underline-offset-2 hover:opacity-80">See the guarantee</a>.</p>
+<p class="mt-4 text-sm text-muted max-w-measure leading-relaxed">Fit-first: we only recommend next steps when we believe we can help. <a href="/guarantee" class="text-ink font-medium underline underline-offset-2 hover:opacity-80">See the guarantee</a>.</p>
 <p class="mt-8 text-xs text-muted max-w-measure leading-relaxed">Results vary by market and scope. Testimonials are illustrative of homeowner experiences.</p>
 </div>
 <div class="relative min-h-[38vh] sm:min-h-[42vh] lg:min-h-full border-b border-line/80 lg:border-b-0 lg:border-l lg:border-line/60 overflow-hidden order-1 lg:order-2">
@@ -686,8 +686,8 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 <span class="text-editorial-caps text-muted mb-2 block">What should we know?</span>
 <textarea id="pb-message" name="message" rows="4" enterkeyhint="done" spellcheck="true" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
 </label>
-<p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="#privacy-heading">Privacy Policy</a>.</p>
-<p id="form-guarantee" class="text-xs text-muted leading-relaxed"><a class="text-ink font-medium underline underline-offset-2 hover:opacity-80" href="#pricing">Fit-first guarantee</a> — we only recommend paid design when we believe we can help.</p>
+<p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="/privacy">Privacy Policy</a>.</p>
+<p id="form-guarantee" class="text-xs text-muted leading-relaxed"><a class="text-ink font-medium underline underline-offset-2 hover:opacity-80" href="/guarantee">Fit-first guarantee</a> — we only recommend paid design when we believe we can help.</p>
 <button id="pb-submit" type="submit" class="w-full min-h-[52px] md:min-h-12 bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation" aria-describedby="form-consent form-guarantee">Submit request</button>
 </form>
 </div>
@@ -695,17 +695,18 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </div>
 </section>
 
-<section id="legal" class="border-t border-line bg-paper scroll-mt-nav max-md:pb-8" aria-labelledby="terms-heading">
+<section id="legal" class="border-t border-line bg-paper scroll-mt-nav max-md:pb-8" aria-labelledby="policies-heading">
 <div class="max-w-content mx-auto px-4 sm:px-8 py-16 sm:py-20">
-<div class="max-w-2xl space-y-12">
-<div>
-<h2 id="terms-heading" class="font-headline font-semibold text-2xl text-ink mb-4">Terms of Service</h2>
-<p class="text-sm text-muted leading-relaxed">Summary: engagements are governed by your signed agreement with PoolBidder. This page will host the full Terms of Service when published. Last updated: April 2026.</p>
-</div>
-<div>
-<h2 id="privacy-heading" class="font-headline font-semibold text-2xl text-ink mb-4">Privacy Policy</h2>
-<p class="text-sm text-muted leading-relaxed">We use information you submit only to respond to inquiries and deliver services you request. We do not sell personal data. Full policy text will be published here. Last updated: April 2026.</p>
-</div>
+<div class="max-w-2xl">
+<h2 id="policies-heading" class="font-headline font-semibold text-2xl text-ink mb-4">Policies &amp; trust</h2>
+<p class="text-sm text-muted leading-relaxed mb-6">Full legal pages describe how we work with homeowners, handle your information, and run engagements. Key documents:</p>
+<ul class="space-y-3 text-sm text-ink">
+<li><a class="font-medium underline underline-offset-4 hover:opacity-80" href="/about">About PoolBidder</a> — who we are and how we stay independent from builders.</li>
+<li><a class="font-medium underline underline-offset-4 hover:opacity-80" href="/privacy">Privacy Policy</a> — collection, use, and your rights.</li>
+<li><a class="font-medium underline underline-offset-4 hover:opacity-80" href="/terms">Terms of Service</a> — site use and service terms.</li>
+<li><a class="font-medium underline underline-offset-4 hover:opacity-80" href="/guarantee">Fit-first guarantee &amp; cancellations</a> — refunds and fit policy.</li>
+<li><a class="font-medium underline underline-offset-4 hover:opacity-80" href="/cookies">Cookie &amp; tracking notice</a>.</li>
+</ul>
 </div>
 </div>
 </section>
@@ -733,8 +734,11 @@ PoolBidder
 <div>
 <p class="text-editorial-caps text-muted mb-4">Company</p>
 <ul class="space-y-1 text-sm">
-<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#terms-heading">Terms of Service</a></li>
-<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="#privacy-heading">Privacy Policy</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/about">About</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/terms">Terms of Service</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/privacy">Privacy Policy</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/guarantee">Guarantee</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/cookies">Cookies</a></li>
 <li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="mailto:hello@poolbidder.com">Contact</a></li>
 </ul>
 </div>
