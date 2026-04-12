@@ -74,8 +74,8 @@ tailwind.config = {
 };
 </script>
 <style>
-  html { overflow-x: clip; }
-  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; overflow-x: clip; }
+  html { overflow-x: clip; overscroll-behavior-y: none; }
+  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; overflow-x: clip; overscroll-behavior-y: none; }
   a, button, summary, [role="button"] { -webkit-tap-highlight-color: transparent; }
   h1, h2, h3, .font-headline { font-family: 'Newsreader', Georgia, serif; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-size: 1.25rem; }
@@ -116,7 +116,6 @@ tailwind.config = {
   .touch-target { min-height: 44px; min-width: 44px; }
   .scroll-mt-nav { scroll-margin-top: calc(5.75rem + env(safe-area-inset-top, 0px)); }
   button, [type="submit"], summary, #sticky-cta-bar a { touch-action: manipulation; }
-  #main-content { overscroll-behavior-y: contain; }
   @media (max-width: 767px) {
     #consult-form input:not([type="hidden"]),
     #consult-form select {
@@ -278,7 +277,7 @@ tailwind.config = {
 </script>
 <!-- FormSubmit: first submission confirms hello@poolbidder.com — replace email in form action if needed -->
 </head>
-<body class="bg-paper text-ink antialiased min-h-[100dvh]">
+<body class="bg-paper text-ink antialiased">
 <a href="#main-content" class="sr-only skip-link">Skip to content</a>
 
 <div id="toast-thanks" class="hidden fixed z-[60] max-w-lg w-[min(100%-2rem,32rem)] left-1/2 -translate-x-1/2 px-4 py-3 bg-ink text-paper text-sm text-center shadow-lg border border-line top-[calc(4.75rem+env(safe-area-inset-top,0px))] [padding-left:max(1rem,env(safe-area-inset-left))] [padding-right:max(1rem,env(safe-area-inset-right))]" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -312,12 +311,12 @@ tailwind.config = {
 </nav>
 </header>
 
-<!-- Sticky mobile CTA (conversion pattern) -->
-<div id="sticky-cta-bar" class="fixed bottom-0 left-0 right-0 z-40 md:hidden border-t border-line bg-paper/95 backdrop-blur-sm pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] transition-opacity duration-200 ease-out" role="region" aria-label="Quick action">
+<!-- Sticky mobile CTA: hidden until past hero; hidden again while #book is in view (see script) -->
+<div id="sticky-cta-bar" class="fixed bottom-0 left-0 right-0 z-40 md:hidden opacity-0 pointer-events-none border-t border-line bg-paper/95 backdrop-blur-sm pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] transition-opacity duration-200 ease-out" role="region" aria-label="Quick action" aria-hidden="true">
 <a href="#book" class="flex w-full min-h-[3rem] justify-center items-center bg-ink text-paper py-3.5 text-sm font-semibold rounded-t-lg active:opacity-90">Book free consultation</a>
 </div>
 
-<main id="main-content" class="pb-28 md:pb-0">
+<main id="main-content" class="pb-24 md:pb-0">
 <section id="top" class="min-h-[100svh] lg:min-h-[92svh] grid lg:grid-cols-2 pt-[calc(4.5rem+env(safe-area-inset-top,0px))]">
 <div class="flex flex-col justify-center px-4 sm:px-10 lg:pl-16 lg:pr-14 py-14 lg:py-20 bg-paper">
 <p class="text-editorial-caps text-muted mb-6">Independent advocacy · Homeowners first</p>
@@ -712,7 +711,7 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </section>
 </main>
 
-<footer class="bg-paper border-t border-line w-full pt-14 pb-[max(5.5rem,env(safe-area-inset-bottom)+4rem)] md:pb-14">
+<footer class="bg-paper border-t border-line w-full pt-14 pb-[max(5.25rem,calc(3.25rem+env(safe-area-inset-bottom,0px)))] md:pb-14">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
 <div class="lg:col-span-1">
@@ -943,23 +942,45 @@ PoolBidder
 
 (function () {
   var bar = document.getElementById('sticky-cta-bar');
+  var hero = document.getElementById('top');
   var book = document.getElementById('book');
-  if (!bar || !book) return;
-  if (window.matchMedia('(min-width: 768px)').matches) return;
-  function setHidden(hide) {
-    bar.classList.toggle('opacity-0', hide);
-    bar.classList.toggle('pointer-events-none', hide);
-    bar.setAttribute('aria-hidden', hide ? 'true' : 'false');
+  if (!bar || !hero) return;
+  var mq = window.matchMedia('(min-width: 768px)');
+  if (mq.matches) return;
+
+  var pastHero = false;
+  var bookInView = false;
+
+  function applySticky() {
+    var show = pastHero && !bookInView;
+    bar.classList.toggle('opacity-0', !show);
+    bar.classList.toggle('pointer-events-none', !show);
+    bar.setAttribute('aria-hidden', show ? 'false' : 'true');
   }
-  var io = new IntersectionObserver(
+
+  var ioHero = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (en) {
-        if (en.target === book) setHidden(en.isIntersecting);
+        pastHero = !en.isIntersecting;
+        applySticky();
       });
     },
-    { rootMargin: '0px 0px -10% 0px', threshold: [0, 0.1, 0.2] }
+    { threshold: 0 }
   );
-  io.observe(book);
+  ioHero.observe(hero);
+
+  if (book) {
+    var ioBook = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          bookInView = en.isIntersecting;
+          applySticky();
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: [0, 0.1, 0.2] }
+    );
+    ioBook.observe(book);
+  }
 })();
 </script>
 </body>
