@@ -11,26 +11,54 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111111'/%3E%3Cpath fill='%23006970' d='M6 22h20v4H6z'/%3E%3C/svg%3E" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Newsreader:opsz,wght@0,6..72,600;0,6..72,700&display=swap" rel="stylesheet"/>
-<script>tailwind.config={theme:{extend:{colors:{ink:'#111111',paper:'#faf9f7',mist:'#f3f2ef',line:'#e0ddd6',muted:'#5c5c5a',brand:'#006970'}}}};</script>
-<style>body{font-family:'IBM Plex Sans',system-ui,sans-serif}.font-headline{font-family:Newsreader,Georgia,serif}:focus-visible{outline:2px solid #111;outline-offset:3px}</style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script>tailwind.config={theme:{extend:{colors:{ink:'#111111',paper:'#faf9f7',mist:'#f3f2ef',line:'#e0ddd6',muted:'#5c5c5a',brand:'#006970'},maxWidth:{content:'72rem'}}}};</script>
+<style>
+body{font-family:'IBM Plex Sans',system-ui,sans-serif}
+.font-headline{font-family:Newsreader,Georgia,serif}
+:focus-visible{outline:2px solid #111;outline-offset:3px}
+.text-editorial-caps{font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:600;font-family:'IBM Plex Sans',system-ui,sans-serif}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+.skip-link:focus{position:fixed;left:1rem;top:max(1rem,env(safe-area-inset-top,0px));z-index:100;clip:auto;width:auto;height:auto;padding:0.5rem 1rem;margin:0;overflow:visible;white-space:normal;background:#faf9f7;border-radius:0.25rem;box-shadow:0 0 0 1px #e0ddd6}
+.touch-target{min-height:44px;min-width:44px}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;font-size:1.25rem}
+</style>
 </head>
 <body class="bg-paper text-ink antialiased text-[15px] sm:text-base leading-relaxed">
-<header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-md">
-<div class="max-w-5xl mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-4 min-h-[4rem] py-3">
-<a href="/" class="font-headline font-semibold text-xl text-ink">PoolBidder</a>
-<nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm" aria-label="Site">
-<a class="text-muted hover:text-ink" href="/about">About</a>
-<a class="text-muted hover:text-ink" href="/privacy">Privacy</a>
-<a class="text-muted hover:text-ink" href="/terms">Terms</a>
-<a class="text-ink font-semibold" href="/guarantee">Guarantee</a>
-<a class="text-muted hover:text-ink" href="/cookies">Cookies</a>
-<a class="text-muted hover:text-ink" href="/#book">Contact</a>
-</nav>
+<a href="#main-content" class="sr-only skip-link">Skip to content</a>
+<header>
+<nav class="fixed top-0 w-full z-50 border-b border-line pt-[env(safe-area-inset-top,0px)] bg-paper/90 backdrop-blur-md supports-[backdrop-filter]:bg-paper/85" aria-label="Primary">
+<div class="flex justify-between items-center max-w-content mx-auto px-4 sm:px-8 min-h-[4.5rem]">
+<a href="/" class="flex items-center gap-2.5 text-xl sm:text-2xl font-headline font-semibold text-ink tracking-tight group" aria-label="PoolBidder home">
+<svg class="h-8 w-8 sm:h-9 sm:w-9 shrink-0 text-ink" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M6 21c5-9 12-14 20-16" stroke="#faf9f7" stroke-width="1.75" stroke-linecap="round"/><rect x="6" y="22" width="20" height="5" rx="1" fill="#006970"/></svg>
+<span>PoolBidder</span>
+</a>
+<div class="hidden md:flex items-center gap-10" id="site-nav-desktop">
+<a class="text-muted text-sm tracking-wide hover:text-ink" href="/#how-it-works">How it works</a>
+<a class="text-muted text-sm tracking-wide hover:text-ink" href="/#scope">What&rsquo;s included</a>
+<a class="text-muted text-sm tracking-wide hover:text-ink" href="/#faq">FAQ</a>
+<a class="text-muted text-sm tracking-wide hover:text-ink" href="/about">About</a>
+<a class="text-muted text-sm tracking-wide hover:text-ink" href="/#book">Contact</a>
 </div>
+<div class="flex items-center gap-2 sm:gap-3">
+<a href="/#book" class="hidden sm:inline-flex items-center justify-center min-h-[44px] bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity">Book consult</a>
+<button type="button" id="site-nav-toggle" class="md:hidden touch-target inline-flex items-center justify-center -mr-1 px-2 text-ink border border-line" aria-expanded="false" aria-controls="site-nav-mobile" aria-label="Open menu">
+<span class="material-symbols-outlined !text-2xl" id="site-nav-toggle-icon">menu</span>
+</button>
+</div>
+</div>
+<div id="site-nav-mobile" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-4 py-2 space-y-0 max-h-[min(70vh,calc(100dvh-5.5rem-env(safe-area-inset-top,0px)))] overflow-y-auto overscroll-contain">
+<a class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="/#how-it-works">How it works</a>
+<a class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="/#scope">What&rsquo;s included</a>
+<a class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="/#faq">FAQ</a>
+<a class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="/about">About</a>
+<a class="flex min-h-[48px] items-center text-ink font-medium py-2" href="/#book">Contact</a>
+</div>
+</nav>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 sm:px-8 py-12 sm:py-16 pb-24">
-<p class="text-editorial-caps text-muted mb-4" style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:600">Policies</p>
+<main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-8 pt-[calc(6rem+env(safe-area-inset-top,0px))] pb-16 sm:pb-24">
+<p class="text-editorial-caps text-muted mb-4">Policies</p>
 <h1 class="font-headline font-semibold text-3xl sm:text-4xl text-ink mb-8 text-balance">Fit-first guarantee &amp; cancellations</h1>
 <p class="text-muted text-sm mb-10">Effective date: April 11, 2026 · Last updated: April 11, 2026</p>
 
@@ -74,18 +102,71 @@
 </div>
 </main>
 
-<footer class="border-t border-line bg-mist py-10">
-<div class="max-w-5xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between gap-6 text-sm text-muted">
-<a href="/" class="font-headline font-semibold text-ink">PoolBidder</a>
-<div class="flex flex-wrap gap-x-5 gap-y-2">
-<a class="hover:text-ink" href="/about">About</a>
-<a class="hover:text-ink" href="/privacy">Privacy</a>
-<a class="hover:text-ink" href="/terms">Terms</a>
-<a class="hover:text-ink" href="/cookies">Cookies</a>
-<a class="hover:text-ink" href="mailto:hello@poolbidder.com">Contact</a>
+<footer class="bg-paper border-t border-line w-full pt-14 pb-[max(5.25rem,calc(3.25rem+env(safe-area-inset-bottom,0px)))] md:pb-14">
+<div class="max-w-content mx-auto px-4 sm:px-8">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
+<div class="lg:col-span-1">
+<div class="flex items-center gap-2.5 font-headline font-semibold text-xl text-ink mb-2">
+<svg class="h-8 w-8 shrink-0 text-ink" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M6 21c5-9 12-14 20-16" stroke="#faf9f7" stroke-width="1.75" stroke-linecap="round"/><rect x="6" y="22" width="20" height="5" rx="1" fill="#006970"/></svg>
+PoolBidder
+</div>
+<p class="text-sm text-muted leading-relaxed max-w-xs">Independent pool design and bidding advocacy for homeowners.</p>
+</div>
+<div>
+<p class="text-editorial-caps text-muted mb-4">Product</p>
+<ul class="space-y-1 text-sm">
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/#how-it-works">How it works</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/#scope">What&rsquo;s included</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/#faq">FAQ</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/#book">Book consult</a></li>
+</ul>
+</div>
+<div>
+<p class="text-editorial-caps text-muted mb-4">Company</p>
+<ul class="space-y-1 text-sm">
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/about">About</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/terms">Terms of Service</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/privacy">Privacy Policy</a></li>
+<li><a class="text-ink font-semibold hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/guarantee" aria-current="page">Guarantee</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="/cookies">Cookies</a></li>
+<li><a class="text-ink hover:underline underline-offset-4 inline-flex min-h-[44px] items-center py-1 touch-manipulation" href="mailto:hello@poolbidder.com">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="text-editorial-caps text-muted mb-4">Get updates</p>
+<p class="text-sm text-muted mb-3">Request a consult or email us to join the list.</p>
+<a href="/#book" class="inline-flex min-h-[44px] items-center text-sm font-semibold text-ink border border-ink px-4 py-2 hover:bg-mist active:opacity-90 transition-colors touch-manipulation">Request consultation</a>
 </div>
 </div>
-<p class="text-center text-xs text-muted mt-8">&copy; 2026 PoolBidder</p>
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8 border-t border-line text-sm text-muted">
+<span>&copy; 2026 PoolBidder. All rights reserved.</span>
+<span class="text-editorial-caps">Design · Specs · Bids</span>
+</div>
+</div>
 </footer>
+<script>
+(function () {
+  var toggle = document.getElementById('site-nav-toggle');
+  var panel = document.getElementById('site-nav-mobile');
+  var icon = document.getElementById('site-nav-toggle-icon');
+  if (!toggle || !panel) return;
+  function setOpen(open) {
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    panel.classList.toggle('hidden', !open);
+    if (icon) icon.textContent = open ? 'close' : 'menu';
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      var first = panel.querySelector('a');
+      if (first) window.setTimeout(function () { try { first.focus(); } catch (e) {} }, 0);
+    } else {
+      window.setTimeout(function () { try { toggle.focus(); } catch (e) {} }, 0);
+    }
+  }
+  toggle.addEventListener('click', function () { setOpen(panel.classList.contains('hidden')); });
+  panel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+})();
+</script>
 </body>
 </html>

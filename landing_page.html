@@ -38,8 +38,6 @@
 <meta name="format-detection" content="telephone=no"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://formsubmit.co"/>
-<link rel="preconnect" href="https://formsubmit.co"/>
 <link rel="manifest" href="/manifest.json"/>
 <link rel="dns-prefetch" href="https://lh3.googleusercontent.com"/>
 <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin/>
@@ -117,12 +115,8 @@ tailwind.config = {
   .scroll-mt-nav { scroll-margin-top: calc(5.75rem + env(safe-area-inset-top, 0px)); }
   button, [type="submit"], summary, #sticky-cta-bar a { touch-action: manipulation; }
   @media (max-width: 767px) {
-    #consult-form input:not([type="hidden"]),
-    #consult-form select {
+    #lead-email-form input:not([type="hidden"]) {
       min-height: 48px;
-    }
-    #consult-form textarea {
-      min-height: 7.5rem;
     }
   }
 </style>
@@ -164,7 +158,7 @@ tailwind.config = {
       "potentialAction": {
         "@type": "CommunicateAction",
         "name": "Request a free consultation",
-        "description": "Submit the consultation form for a reply within one business day.",
+        "description": "Enter your email to book a consultation call.",
         "target": "https://poolbid-landing.vercel.app/#book"
       }
     },
@@ -249,10 +243,10 @@ tailwind.config = {
     },
     {
       "@type": "Question",
-      "name": "What happens after I submit the form?",
+      "name": "What happens after I submit my email?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "After you submit, you will see on-page confirmation. If your browser shows a quick spam check, complete it—then check your inbox for an automated confirmation email. We reply within one business day with next steps, or a polite decline if we are not a fit."
+        "text": "We receive your email for follow-up, and your browser opens our calendar in a new tab so you can pick a time. We may still reply by email within one business day with next steps."
       }
     }
       ]
@@ -272,7 +266,6 @@ tailwind.config = {
   ]
 }
 </script>
-<!-- FormSubmit: first submission confirms hello@poolbidder.com — replace email in form action if needed -->
 </head>
 <body class="bg-paper text-ink antialiased">
 <a href="#main-content" class="sr-only skip-link">Skip to content</a>
@@ -290,6 +283,7 @@ tailwind.config = {
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#how-it-works">How it works</a>
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#scope">What&rsquo;s included</a>
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#faq">FAQ</a>
+<a class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="/about">About</a>
 <a data-nav-link class="nav-link text-muted text-sm tracking-wide hover:text-ink" href="#book">Contact</a>
 </div>
 <div class="flex items-center gap-2 sm:gap-3">
@@ -303,6 +297,7 @@ tailwind.config = {
 <a data-nav-link class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="#how-it-works">How it works</a>
 <a data-nav-link class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="#scope">What&rsquo;s included</a>
 <a data-nav-link class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="#faq">FAQ</a>
+<a class="flex min-h-[48px] items-center border-b border-line/60 text-ink font-medium py-2" href="/about">About</a>
 <a data-nav-link class="flex min-h-[48px] items-center text-ink font-medium py-2" href="#book">Contact</a>
 </div>
 </nav>
@@ -489,7 +484,7 @@ We represent you—not builders. Design, unified specs, and a managed bid proces
 <div class="max-w-2xl mx-auto px-4 sm:px-8">
 <div class="border-2 border-ink bg-paper">
 <div class="border-b border-line px-8 sm:px-12 py-12 text-center">
-<p class="text-editorial-caps text-muted mb-3">The Advocate Package</p>
+<p class="text-editorial-caps text-muted mb-3">Independent scope</p>
 <h2 class="font-headline font-semibold text-2xl sm:text-3xl text-ink tracking-tight">Design, specs &amp; bid advocacy</h2>
 <p class="text-muted text-sm sm:text-base mt-4 max-w-lg mx-auto leading-relaxed">We tailor scope to your project. <strong class="text-ink font-semibold">Investment is discussed on your consultation call</strong>—no surprise sticker prices on the website.</p>
 </div>
@@ -595,18 +590,18 @@ Roughly 5–7 days for an initial design pass and about two weeks to first bids�
 </details>
 <details name="faq" class="faq-item group border-b border-line bg-paper">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
-What happens after I submit the form?
+What happens after I submit my email?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
 </summary>
 <div class="pb-5 text-muted text-sm leading-relaxed">
-After you submit, you will see on-page confirmation. If your browser shows a quick spam check, complete it—then check your inbox for an automated confirmation email. We reply within one business day with next steps, or a polite decline if we are not a fit.
+We receive your email for follow-up, and your browser opens our calendar in a new tab so you can pick a time. We may still reply by email within one business day with next steps or a polite decline if we are not a fit.
 </div>
 </details>
 </div>
 </div>
 </section>
 
-<!-- Conversion: lead form + end-to-end workflow (FormSubmit) -->
+<!-- Lead: email → Slack (API) → calendar in new tab -->
 <section id="book" class="py-20 sm:py-28 bg-mist border-t border-line scroll-mt-nav" aria-label="Request a consultation">
 <div class="max-w-content mx-auto px-4 sm:px-8">
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -614,7 +609,7 @@ After you submit, you will see on-page confirmation. If your browser shows a qui
 <p class="text-editorial-caps text-muted mb-4">Get started</p>
 <h2 id="book-heading" class="font-headline font-semibold text-4xl sm:text-5xl text-ink mb-6 leading-tight text-balance">Book your free consultation</h2>
 <p class="text-lg text-muted leading-relaxed mb-8 max-w-measure">
-Tell us about your project. We respond within <strong class="text-ink font-semibold">one business day</strong> with next steps—no cold calls, no spam.
+Enter your email, then pick a time on the calendar that opens—no cold calls, no spam.
 </p>
 <ul class="space-y-4 text-sm text-muted mb-8">
 <li class="flex gap-3"><span class="text-brand font-bold" aria-hidden="true">✓</span> 15-minute fit check · no obligation</li>
@@ -623,63 +618,32 @@ Tell us about your project. We respond within <strong class="text-ink font-semib
 </ul>
 <p class="text-editorial-caps text-muted mb-3">What happens next</p>
 <ol class="list-decimal list-outside pl-5 space-y-2.5 text-sm text-muted mb-8 max-w-measure marker:text-ink">
-<li class="pl-1">You submit the form—about two minutes.</li>
-<li class="pl-1">We reply within <strong class="text-ink font-semibold">one business day</strong> by email.</li>
-<li class="pl-1">If we are a fit, we schedule a short discovery call—no pressure to buy design on the spot.</li>
+<li class="pl-1">You submit your email so we can follow up.</li>
+<li class="pl-1">Your browser opens our calendar in a new tab to choose a time.</li>
+<li class="pl-1">We may reply within <strong class="text-ink font-semibold">one business day</strong> by email with next steps—no pressure to buy design on the spot.</li>
 </ol>
 <p class="text-sm text-muted">Prefer email only? <a class="text-ink font-medium underline underline-offset-4 hover:opacity-80" href="mailto:hello@poolbidder.com?subject=PoolBidder%20inquiry">hello@poolbidder.com</a></p>
 <p class="mt-4 flex items-center gap-2 text-xs text-muted">
 <span class="material-symbols-outlined text-base !text-lg text-brand" aria-hidden="true">lock</span>
-<span>Form is sent over HTTPS. We use your details only to respond to this request.</span>
+<span>Request is sent over HTTPS. We use your email only to respond to this request.</span>
 </p>
-<!-- Optional: replace with Calendly — <iframe src="https://calendly.com/your-link" class="w-full min-h-[700px] border-0" title="Schedule"></iframe> -->
 </div>
 <div class="border-2 border-ink bg-paper p-6 sm:p-8 shadow-sm rounded-lg">
 <div id="form-success" class="hidden text-center py-8 px-4" role="status" tabindex="-1">
 <p class="font-headline font-semibold text-2xl text-ink mb-3">You are all set</p>
-<p class="text-muted text-sm leading-relaxed">Thanks for reaching out. Check your inbox for a confirmation—we will follow up shortly.</p>
+<p class="text-muted text-sm leading-relaxed">We received your email. If a new tab did not open, <a class="text-ink font-semibold underline underline-offset-4" href="https://cal.com/elsakr" target="_blank" rel="noopener noreferrer">open the calendar here</a>.</p>
 <a href="#top" class="inline-block mt-6 text-sm font-semibold text-brand underline underline-offset-4">Back to top</a>
 </div>
-<form id="consult-form" class="space-y-5" method="post" action="https://formsubmit.co/hello@poolbidder.com" accept-charset="UTF-8" autocomplete="on" name="consult" aria-labelledby="book-heading">
-<input type="hidden" name="_subject" value="PoolBidder — Consultation request"/>
-<input type="hidden" name="_template" value="table"/>
-<input type="hidden" name="_autoresponse" value="Thanks for contacting PoolBidder. We received your request and will reply within one business day."/>
-<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
-<label class="block" for="pb-name">
-<span class="text-editorial-caps text-muted mb-2 block">Full name</span>
-<input id="pb-name" type="text" name="name" required autocomplete="name" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
-</label>
+<form id="lead-email-form" class="space-y-5" autocomplete="on" name="lead-email" aria-labelledby="book-heading" novalidate>
+<input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
 <label class="block" for="pb-email">
 <span class="text-editorial-caps text-muted mb-2 block">Email</span>
 <input id="pb-email" type="email" name="email" required autocomplete="email" inputmode="email" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
 </label>
-<div class="grid sm:grid-cols-2 gap-5">
-<label class="block" for="pb-phone">
-<span class="text-editorial-caps text-muted mb-2 block">Phone <span class="text-muted font-normal normal-case">(optional)</span></span>
-<input id="pb-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
-</label>
-<label class="block" for="pb-location">
-<span class="text-editorial-caps text-muted mb-2 block">City / metro</span>
-<input id="pb-location" type="text" name="location" required autocomplete="address-level2" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"/>
-</label>
-</div>
-<label class="block" for="pb-stage">
-<span class="text-editorial-caps text-muted mb-2 block">Project stage</span>
-<select id="pb-stage" name="stage" required class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink">
-<option value="" selected disabled hidden>Select one</option>
-<option value="Exploring">Exploring / budgeting</option>
-<option value="Ready for design">Ready for design</option>
-<option value="Already have bids">Already have bids · need help comparing</option>
-<option value="Other">Other</option>
-</select>
-</label>
-<label class="block" for="pb-message">
-<span class="text-editorial-caps text-muted mb-2 block">What should we know?</span>
-<textarea id="pb-message" name="message" rows="4" enterkeyhint="done" spellcheck="true" class="w-full border border-line bg-paper px-4 py-3 text-ink text-base md:text-sm focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink resize-y" placeholder="Yard size, style goals, timeline…"></textarea>
-</label>
 <p id="form-consent" class="text-xs text-muted leading-relaxed">By submitting, you agree to be contacted about your inquiry. See our <a class="underline underline-offset-2" href="/privacy">Privacy Policy</a>.</p>
 <p id="form-guarantee" class="text-xs text-muted leading-relaxed"><a class="text-ink font-medium underline underline-offset-2 hover:opacity-80" href="/guarantee">Fit-first guarantee</a> — we only recommend paid design when we believe we can help.</p>
-<button id="pb-submit" type="submit" class="w-full min-h-[52px] md:min-h-12 bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation" aria-describedby="form-consent form-guarantee">Submit request</button>
+<p id="form-err" class="hidden text-xs text-red-800 bg-red-50 border border-red-200 px-3 py-2" role="alert"></p>
+<button id="pb-submit" type="submit" class="w-full min-h-[52px] md:min-h-12 bg-ink text-paper py-4 text-base font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation" aria-describedby="form-consent form-guarantee">Continue to calendar</button>
 </form>
 </div>
 </div>
@@ -749,18 +713,14 @@ PoolBidder
 <script>
 (function () {
   var baseUrl = window.location.origin + '/';
-  var form = document.getElementById('consult-form');
+  var form = document.getElementById('lead-email-form');
   var success = document.getElementById('form-success');
-  var nextInput = document.createElement('input');
-  nextInput.type = 'hidden';
-  nextInput.name = '_next';
-  nextInput.value = baseUrl + '?thanks=1#book';
-  if (form) form.appendChild(nextInput);
+  var errEl = document.getElementById('form-err');
 
   function showThanksToast() {
     var t = document.getElementById('toast-thanks');
     if (!t) return;
-    t.textContent = 'Thanks — we received your request and will reply within one business day.';
+    t.textContent = 'Thanks — we opened the calendar in a new tab.';
     t.classList.remove('hidden');
     window.setTimeout(function () { t.classList.add('hidden'); }, 8000);
   }
@@ -790,25 +750,67 @@ PoolBidder
   }
 
   if (form) {
-    form.addEventListener('submit', function () {
-      try { sessionStorage.setItem('pb_form_started', '1'); } catch (e) {}
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var hp = form.querySelector('.hp');
+      if (hp && hp.value) return;
+      var emailInput = document.getElementById('pb-email');
+      var email = emailInput ? String(emailInput.value || '').trim() : '';
+      if (errEl) {
+        errEl.classList.add('hidden');
+        errEl.textContent = '';
+      }
       var btn = document.getElementById('pb-submit');
       if (btn) {
         btn.disabled = true;
         btn.setAttribute('aria-busy', 'true');
         btn.textContent = 'Sending…';
       }
+      fetch('/api/notify-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email }),
+      })
+        .then(function (r) {
+          if (!r.ok) {
+            return r.json().then(function (j) {
+              throw new Error((j && j.error) || 'Request failed');
+            });
+          }
+          return r.json();
+        })
+        .then(function () {
+          try {
+            window.open('https://cal.com/elsakr', '_blank', 'noopener,noreferrer');
+          } catch (err) {}
+          showInlineSuccess();
+          try { document.title = 'Thanks — PoolBidder'; } catch (e2) {}
+        })
+        .catch(function (err) {
+          if (errEl) {
+            errEl.textContent =
+              err && err.message
+                ? err.message
+                : 'Something went wrong. Try again or email hello@poolbidder.com.';
+            errEl.classList.remove('hidden');
+          }
+          if (btn) {
+            btn.disabled = false;
+            btn.removeAttribute('aria-busy');
+            btn.textContent = 'Continue to calendar';
+          }
+        });
     });
   }
 
   window.addEventListener('pageshow', function (ev) {
     if (!ev.persisted) return;
-    var f = document.getElementById('consult-form');
+    var f = document.getElementById('lead-email-form');
     var btn = document.getElementById('pb-submit');
     if (f && btn && !f.classList.contains('hidden')) {
       btn.disabled = false;
       btn.removeAttribute('aria-busy');
-      btn.textContent = 'Submit request';
+      btn.textContent = 'Continue to calendar';
     }
     try {
       var q = new URLSearchParams(window.location.search).get('thanks');
