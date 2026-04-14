@@ -92,6 +92,9 @@ tailwind.config = {
   details.faq-item summary { list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+  details.faq-item { background-color: transparent; }
+  details.faq-item summary:hover { background-color: rgba(250, 249, 247, 0.45); }
+  details.faq-item[open] summary { background-color: rgba(250, 249, 247, 0.35); }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   }
@@ -602,7 +605,7 @@ We represent you—not builders. Independent design, one technical spec every bi
 <h2 class="font-headline font-semibold text-4xl sm:text-5xl text-ink">Common questions</h2>
 </div>
 <div class="border-t border-line">
-<details name="faq" class="faq-item group border-b border-line bg-paper" open>
+<details name="faq" class="faq-item group border-b border-line/60" open>
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 Why not go straight to a builder?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -611,7 +614,7 @@ Why not go straight to a builder?
 You can—but margin and commissions are often embedded. When you arrive with independent plans and specs, builders know you can compare, which pulls pricing toward a competitive baseline.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 Do you build the pool?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -620,7 +623,7 @@ Do you build the pool?
 No. We are independent advocates—we do not construct pools and we do not act as a builder&rsquo;s agent.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 Do you take referral fees, rebates, or commissions from builders?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -629,7 +632,7 @@ Do you take referral fees, rebates, or commissions from builders?
 No. We are compensated by you for design and advocacy work, not by steering you to a particular contractor. That is core to how we represent your interests. See also our <a class="text-ink font-medium underline underline-offset-2" href="/terms">Terms of Service</a> and <a class="text-ink font-medium underline underline-offset-2" href="/privacy">Privacy Policy</a> for how we handle information.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 How do you choose which builders receive the bid package?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -638,7 +641,7 @@ How do you choose which builders receive the bid package?
 We shortlist qualified builders for your market and scope—licensing, capacity, and fit for fiberglass or gunite work as applicable. You stay in control of who is invited; our job is to keep the process technical and comparable, not to favor a single brand.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 What do I get in writing before I pay for design?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -647,7 +650,7 @@ What do I get in writing before I pay for design?
 The discovery call is free and used to confirm fit. Before you commit to paid design, we explain what deliverables you will receive (e.g. drawings, bid sheet structure, review steps) and how engagement works—so you can decide with clear expectations. Details are covered in your <a class="text-ink font-medium underline underline-offset-2" href="/terms">Terms</a> and any project-specific agreement.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 Who owns the design files and plans?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -656,7 +659,7 @@ Who owns the design files and plans?
 You do—subject to your agreement with us and license terms for any third-party components. The point of our process is that you can shop the job credibly because the documentation is yours to use with the builders you select.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 Do you work on vinyl liner pools?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -665,7 +668,7 @@ Do you work on vinyl liner pools?
 We focus on <strong class="text-ink font-medium">fiberglass</strong> and <strong class="text-ink font-medium">gunite (concrete)</strong> pools. Vinyl liner pools are often a different price point and buying pattern; we typically do not take those projects so we can devote our process to scopes where independent design and bid comparison move the needle.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 What if I already have a sketch?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -674,7 +677,7 @@ What if I already have a sketch?
 We can use it as the starting point for technical plans that support accurate, comparable bids.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 How long does the process take?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
@@ -683,7 +686,7 @@ How long does the process take?
 Roughly 5–7 days for an initial design pass and about two weeks to first bids—market dependent.
 </div>
 </details>
-<details name="faq" class="faq-item group border-b border-line bg-paper">
+<details name="faq" class="faq-item group border-b border-line/60">
 <summary class="flex min-h-[3rem] cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink text-left text-base">
 What happens after I submit my email?
 <span class="material-symbols-outlined faq-chevron shrink-0 transition-transform" aria-hidden="true">expand_more</span>
